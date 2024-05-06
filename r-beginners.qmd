@@ -1,0 +1,76 @@
+---
+title: "r-beginners"
+---
+
+## R/Rtools/Rstudio
+
+概念（统计软件，和SPSS比较；编程语言，和Python比较）
+安装（官网和镜像的使用）
+界面介绍（R和Rstudio）
+
+
+## 数据类型
+
+
+
+数值型
+字符型
+因子型
+逻辑型
+
+向量、数据、矩阵、数据框、列表
+
+## 导入/导出文件
+
+导入文件：
+txt
+csv
+xls
+xlsx
+sas
+spss
+rdata(Rdata/RData)
+rds
+
+txt
+cxv
+rdata
+rds
+xls
+xlsx
+
+read.table
+readr
+haven
+readxl
+
+
+
+## 基础数据处理
+
+选择（反选）行/列
+
+
+
+## 基础绘图
+
+plot
+
+
+ggplot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

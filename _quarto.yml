@@ -1,0 +1,7 @@
+project:
+  title: "r-beginners"
+
+knitr: 
+  opts_chunk: 
+    collapse: true
+

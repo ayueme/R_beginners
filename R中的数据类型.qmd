@@ -1,0 +1,208 @@
+---
+title: "R中的数据类型和数据结构"
+format: html
+---
+
+这部分内容是基础中的基础，是必须掌握的内容。
+
+## 数据类型
+
+数值型：就是表示数字的一种方式，可以是整数或小数
+
+```{r}
+# 把一个整数存储到变量中
+my_integer <- 5
+my_integer
+
+# 把一个小数存储到变量中
+my_float <- 3.14
+my_float
+```
+
+
+
+字符型：就是表示文本的一种方式，用引号括起来
+
+```{r}
+# 把一段文字存储到变量中
+my_string <- "Hello, R!"
+my_string
+```
+
+
+逻辑型：表示是或否的值，只能是TRUE（是）或FALSE（否）
+
+```{r}
+# 把一个逻辑值存储到变量中
+my_logical <- TRUE
+my_logical
+```
+
+
+因子型：因子型数据实际上是一种特殊的变量类型，用来表示有限个离散的类别或水平。这些类别可以是例如颜色、地区、血型等有限的取值范围等
+
+可以使用factor()函数来将一个变量转换为因子型。这通常用于将一列数据转化为有限的类别：
+
+```{r}
+# 创建一个因子型变量
+my_factor <- factor(c("A", "B", "A", "C", "B"))
+my_factor
+```
+
+因子有所谓的“水平”或“级别”，即它可以取的具体值。你可以使用levels()函数查看这些水平
+
+```{r}
+# 查看因子的水平
+levels(my_factor)
+```
+
+有时候，你可能需要更改因子的水平，以确保它们按照你的预期排列：
+
+```{r}
+# 更改因子的水平
+my_factor <- factor(my_factor, levels = c("A", "B", "C"))
+my_factor
+```
+
+因子型变量在R中是一种强大的工具，使得对离散类别的数据进行分析和可视化变得更加方便。在实际应用中，你可能会经常遇到需要将某些数据转换为因子型以便更好地理解和处理的情况。
+
+## 数据结构
+
+R中的数据结构：
+
+![](figs/PixPin_2024-02-22_15-35-50.png)
+
+向量：就是一组数据，可以是数字、字符或逻辑值，只能是同一类型
+
+```{r}
+a <- c(1, 2, 5, 3, 6, -2, 4)
+b <- c("one", "two", "three")
+c <- c(TRUE, TRUE, TRUE, FALSE, TRUE, FALSE)
+```
+
+这里，a是数值型向量，b是字符型向量，而c是逻辑型向量。 注意，单个向量中的数据必须
+拥有相同的类型或模式（数值型、字符型或逻辑型）。同一向量中无法混杂不同类型的数据。
+
+矩阵：就像一个表格，有行和列，里面的每个元素都是同一类型的数据。可通过函数`matrix()`创建矩阵。一般使用格式为：
+
+```{r,eval=FALSE}
+myymatrix <- matrix(vector, nrow = 多少行？, ncol = 多少列？,
+                    byrow = 是不是按行进行填充？,
+                    dimnames = list(行名, 列名))
+```
+
+其中`vector`包含了矩阵的元素，`nrow`和`ncol`用以指定行和列的维数，`dimnames`包含了可选
+的、以字符型向量表示的行名和列名。选项`byrow`则表明矩阵应当按行填充（`byrow=TRUE`）
+还是按列填充（`byrow=FALSE`），默认情况下按列填充。
+
+以下代码创建了一个5行、4列的矩阵，用1~20这20个数字进行填充，并且定义了行的名字和列的名字，并且是按列进行填充：
+
+```{r}
+y <- matrix(1:20, nrow=5, ncol=4,
+            dimnames = list(c("行1","行2","行3","行4","行5"),
+                            c("列1","列2","列3","列4"))
+            ) 
+y
+```
+
+数组：类似矩阵，但可以有更多的维度（行、列以外的方向）。数组可通过`array`函数创建，形式如下：
+
+```{r,eval=FALSE}
+myarray <- array(vector, dimensions, dimnames)
+```
+
+其中`vector`包含了数组中的数据，`dimensions`是一个数值型向量，给出了各个维度下标的最大
+值，而`dimnames`是可选的、各维度名称标签的列表。
+
+```{r}
+dim1 <- c("A1", "A2")
+dim2 <- c("B1", "B2", "B3")
+dim3 <- c("C1", "C2", "C3", "C4")
+
+z <- array(1:24, c(2, 3, 4), dimnames=list(dim1, dim2, dim3))
+z
+```
+
+
+
+数据框:由于不同的列可以包含不同模式（数值型、字符型等）的数据，数据框的概念较矩阵来说更常见。它与你通常在SAS、SPSS和Stata中看到的数据集类似。数据框将是你在R中最常处理的
+数据结构。
+
+数据框可通过函数data.frame()创建
+
+```{r,eval=FALSE}
+mydata <- data.frame(col1, col2, col3,...)
+```
+
+以下代码会创建一个数据框，这个数据框有4列，第一列的名字是`patientID`，是数值型；第二列的名字是`age`，也是数值型；第三列的名字是`diabetes`，是字符型；第4列的名字是`status`，也是字符型：
+
+```{r}
+patientID <- c(1, 2, 3, 4)
+age <- c(25, 34, 28, 52)
+diabetes <- c("Type1", "Type2", "Type1", "Type1")
+status <- c("Poor", "Improved", "Excellent", "Poor")
+
+patientdata <- data.frame(patientID, age, diabetes, status)
+patientdata
+```
+
+
+
+
+列表：列表可以包含不同类型的数据，甚至可以包含其他数据结构，如向量、矩阵或数据框
+
+可以使用函数list()创建列表：
+
+```{r,eval=FALSE}
+mylist <- list(object1, object2, ...)
+```
+
+其中的对象可以是目前为止讲到的任何结构。你还可以为列表中的对象命名：
+
+```{r,eval=FALSE}
+mylist <- list(name1=object1, name2=object2, ...)
+```
+
+
+
+```{r}
+g <- "My First List"
+h <- c(25, 26, 18, 39)
+j <- matrix(1:10, nrow=5)
+k <- c("one", "two", "three")
+
+mylist <- list(title=g, ages=h, j, k)
+mylist
+```
+
+## 判断类型
+
+
+## 类型转换
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
