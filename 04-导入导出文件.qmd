@@ -220,7 +220,7 @@ write.table(tmp,
 
 如果要保存为或者txt文件，可以使用以下函数：
 
-```{r}
+```{r,eval=FALSE}
 write.table(tmp,
             file = "datasets/222.txt",
             sep = "\t", # 千万别忘记指定分隔符！！
@@ -234,14 +234,14 @@ write.table(tmp,
 
 推荐大家平时保存时选择`rdata/Rdata/RData/rds`，方便，官方！
 
-```{r}
+```{r,eval=FALSE}
 save(tmp,csv, # 同时保存多个对象
      file = "datasets/tmp1.rdata")
 ```
 
 保存为`rds`格式：
 
-```{r}
+```{r,eval=TRUE}
 saveRDS(tmp, file = "datasets/tmp.rds")
 ```
 
