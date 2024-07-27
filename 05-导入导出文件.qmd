@@ -10,7 +10,7 @@ title: "导入导出文件"
 
 这两个问题对于会的人来说非常简单，可以有多种方法可以实现，但是对于新手来说却经常遇到报错。今天**从一个新手的角度说一说R语言的数据读入和另存问题**。
 
-## 把数据读入R语言
+## 读取文件
 
 ### Excel
 
@@ -20,7 +20,7 @@ title: "导入导出文件"
 
 现在我们需要把它读入R里面。
 
-我推荐你使用`readxl`包读取Excel文件。首先我们要安装这个R包：
+我推荐你使用`readxl`包读取Excel文件。因为这个R包并不是“出场自带”的，因此我们需要先安装这个R包（提醒：你更改镜像了吗？）：
 
 ```{r,eval=FALSE}
 install.packages("readxl")
@@ -32,10 +32,11 @@ install.packages("readxl")
 library(readxl)
 ```
 
-然后我们就可以读入这个文件了，**读取时，你必须指明你的文件在哪里！** 如果文件路径没写对，就会出现下面这种类似的报错，一般情况下，它会告诉你，你的路径没写对，或者找不到这个文件，这个文件不存在，不能打开连接等等错误。0
+然后我们就可以读取这个文件了，**读取时，你必须指明你的文件在哪里！**这就涉及到工作路径的问题了，如果你的文件和当前工作路径不在同一个文件夹下，那么一定要指定你的文件在哪里。 如果文件路径没写对，就会出现下面这种类似的报错，一般情况下，它会告诉你：你的路径没写对，或者找不到这个文件，这个文件不存在，不能打开连接等等错误。
 
 ```{r,eval=FALSE}
-brca_clin <- read_xlsx("E:/brca_clin.xlsx", col_names = T)
+# col_names = TRUE 表示这个文件是有列名的
+brca_clin <- read_xlsx("E:/brca_clin.xlsx", col_names = TRUE)
 
 Error: `path` does not exist: ‘E:/brca_clin.xlsx’
 ```
@@ -48,7 +49,7 @@ brca_clin <- read_xlsx("F:/R_books/R_beginners/brca_clin.xlsx", col_names = T)
 brca_clin
 ```
 
-这样我们就成功把文件读取到R里面了，并且这个文件的内容被存储在`brca_clin`这个对象中，此时你可以在`Environment`面板中看到`brca_clin`这个对象。
+这样我们就成功把文件读取到R里面了，并且这个文件的内容被存储在`brca_clin`这个对象（object）中，此时你可以在`Environment`面板中看到`brca_clin`这个对象。
 
 上面代码中的`F:/R_books/R_beginners/brca_clin.xlsx`这种路径写法被称为**绝对路径**，意思是：从最开始的位置一直往下写，除此之外，还有一种写法是**相对路径**，即从相对于当前路径的位置开始写。
 
@@ -71,7 +72,7 @@ brca_expr <- read_xlsx("./datasets/brca_expr.xlsx", col_names = T)
 
 其中的`./`表示当前工作路径，可以省略不写。
 
-如果一个名字是`brca_expr_不要删.xlsx`的文件位于**F盘-R_books文件夹**中，也就是说位于**当前工作路径的上一级**中，如果要读取这个文件，可以使用以下代码：
+如果一个名字是`brca_expr_不要删.xlsx`的文件位于**F盘-R_books文件夹**中，也就是说位于**当前工作路径的上一级文件夹**中，如果要读取这个文件，可以使用以下代码：
 
 ```{r}
 brca_expr_不要删 <- read_xlsx("../brca_expr_不要删.xlsx", col_names = T)
@@ -87,8 +88,8 @@ brca_expr_不要删 <- read_xlsx("../brca_expr_不要删.xlsx", col_names = T)
 
 - 注意`/`，`\`，`""`，`''`，这些标点一定要在**英文状态下输入**！
 - 这个示例文件是有**列名**的，所以在读取的时候加了`col_names=T`这个参数，没有列名就要改成`F`；
-- 如果你的数据使用了*合并/拆分单元格、各种格式、公式等*，会报错！复杂的表头在读取时很复杂，建议大家初学时都整理成示例这种简单的表头；
-- 这个文件是`.xlsx`格式的，如果不是，那你需要用其他函数，比如`read_xls()`函数读取`.xls`结尾的文件；每个函数的功能都是有要求的，不能乱用。
+- 如果你的数据使用了*合并/拆分单元格、各种格式、公式等*，会报错！复杂的表头在读取时代码也会变得很复杂，建议大家初学时都整理成示例文件这种简单的表头；
+- 这个文件是`.xlsx`格式的，如果不是，那你需要用其他函数，比如：使用`read_xls()`函数读取`.xls`结尾的文件；每个函数的功能都是有要求的，不能乱用，记得多查看函数的帮助文档。
 - 如果你读取中文遇到乱码问题，那大概率是遇到了编码问题，这是一个很复杂的问题：
   - 首先你可以通过点击Rstudio中的`Tools`-`Global Options`，到达以下界面，把默认编码方式改为`utf-8`，然后关闭rstudio，重新读取；
   
@@ -106,13 +107,13 @@ csv文件是一种*逗号分隔文件*，打开后和excel看起来一模一样�
 *一般推荐把excel文件另存为csv文件，因为方便R语言读取，不需要安装额外的R包也可以读取~*
 
 ```{r}
-# read.csv是R自带的函数，不用加载R包
+# read.csv是R自带的函数，不用加载R包；header = T 表示这个文件有列名
 csv <- read.csv("datasets/brca_clin.csv", header = T)
 
 csv
 ```
 
-或者用`read.table()`函数读取。
+或者用`read.table()`函数读取。由于该函数可以读取很多格式，而每种文件格式的分隔符并不相同（比如csv文件是逗号分隔，txt文件是Tab分隔），因此在使用该函数时需要**指定文件的分隔符**：
 
 ```{r}
 csv <- read.table("datasets/brca_clin.csv", header = T,
@@ -132,24 +133,24 @@ csv
 
 txt文件也是我们常见的文件类型，通常这种数据也是可以直接读取的，不需要额外安装R包。
 
-现在我们有一个这样的txt文件，它看起来不规整，但其实是规整的哦~~，不要被表象迷惑，也**千万不要试图用空格键把它对齐！！**
+现在我们有一个这样的txt文件，它看起来不规整，但其实是规整的哦，不要被表象迷惑，也**千万不要试图用空格键把它对齐！！**
 
 ![txt文件](figs/PixPin_2024-02-22_15-14-36.png)
 
 **txt是`tab`键分隔的文件，在读取时，一定要指定分隔符：**
 
 ```{r}
-tmp <- read.table("E:/R/r-beginners/datasets/brca_clin.txt",
-                  sep = "\t", # 必须要指定分隔符\t
+tmp <- read.table("datasets/brca_clin.txt",
+                  sep = "\t", # 必须要指定分隔符：\t，表示Tab键分隔
                   header = T)
 tmp
 ```
 
 ### SPSS
 
-*如果是spss软件产生的`.sav`文件*，可以使用`foreign`包中的`read.spss()`函数读取，或者使用`haven`包中的`read_sav()`
+*如果是spss软件产生的`.sav`文件*，可以使用`foreign`包中的`read.spss()`函数读取，或者使用`haven`包中的`read_sav()`函数。
 
-这两个包在使用前需要先安装哦~
+这两个包在使用前需要先安装，安装过程这里就不演示了。
 
 ```{r}
 # foreign包读取
@@ -173,7 +174,7 @@ spss
 
 ### rdata
 
-*如果是`rdata/Rdata/RData`文件*，这个是R自带的格式，大小写不影响，都能识别，直接`load()`即可，但是要**注意一定要写对文件路径！！** 或者也可以直接双击`rdata/Rdata/RData`文件！
+*如果是`rdata/Rdata/RData`文件*，这个是R自带的格式，大小写不影响，都能识别，直接`load()`即可，但是要**注意一定要写对文件路径！**或者也可以直接双击`rdata/Rdata/RData`文件，或者选中文件-单击鼠标右键-打开方式-选择Rstudio。
 
 如果要读取一个名字为`brca_example.rdata`的文件，它位于`datasets`这个文件夹（这个文件夹是和当前工作目录同一级的）中，可以使用以下代码：
 
@@ -187,28 +188,42 @@ load(file = "datasets/brca_example.rdata")
 tmp <- readRDS(file = "datasets/brca_example.rds") 
 ```
 
-常见的就是这些，当你掌握这些简单的之后，你可以尝试更加复杂的，以后肯定也会遇到，不过有了这些简单的作为基础，相信你能更快的解决这类问题~
+常见的就是这些，当你掌握这些简单的之后，你可以尝试更加复杂的，以后肯定也会遇到，不过有了这些简单的作为基础，相信你能更快的解决这类问题。
 
-## 写出文件（从R语言另存为其他格式）
+## 查看文件
 
-写出文件我觉得比读取文件要简单一点，如果你实在不知道怎么保存，有个简便方法，在`Environment`面板中有个`保存`按钮，点击即可保存所有对象到1个`RData`文件中：
+```{r}
+dim(brca_clin)
+str(brca_clin)
+class(brca_clin)
+colnames(brca_clin)
+names(brca_clin)
+head(brca_clin)
+tail(brca_clin)
+rm(brca_clin)
+```
+
+## 保存文件
+
+保存文件我觉得比读取文件要简单一点，如果你实在不知道怎么保存，有个简便方法，在`Environment`面板中有个`保存`按钮，点击即可保存所有对象到`RData`文件中：
 
 ![一键保存所有](figs/PixPin_2024-02-22_15-21-21.png)
 
-直接点击保存，就会在你当前工作目录产生一个`RData`文件，下次直接`load`或者双击即可快速打开你的所有东西！！！
+直接点击保存，就会在你当前工作目录产生一个`RData`文件，下次直接`load`或者双击即可快速打开你的所有东西！不过不建议这么做，因为这个`RData`文件可能会很大。
 
 不太推荐直接保存为excel格式，建议使用csv格式。
 
-如果是想把`tmp`这个对象保存为csv文件，可以使用以下函数：
+如果是想把`tmp`这个对象保存为csv文件，可以使用`write.csv()`或者`write.table()`，`write.table()`和`read.table()`类似，也是可以把文件保存为多种格式，只需要指定分隔符即可。
 
 ```{r,eval=FALSE}
 # 把tmp这个数据框保存为csv
 write.csv(tmp, # 要保存的对象
-          file = "datasets/111.csv", #保存到哪里，保存为什么格式，.csv不要忘记！
+          file = "datasets/111.csv", #保存到哪里？格式？ .csv不要忘记！
           quote = F, # 不加引号
-          row.names = F # 行名
+          row.names = F # 有没有行名
           )
 
+# 或者使用write.table
 write.table(tmp,
             file = "datasets/111.csv", #保存到哪里，保存为什么格式，.csv不要忘记！
             sep = ",",  # 必须指定分隔符！！！
@@ -218,7 +233,7 @@ write.table(tmp,
             )
 ```
 
-如果要保存为或者txt文件，可以使用以下函数：
+如果要保存为或者txt文件，也可以使用`write.table()`：
 
 ```{r,eval=FALSE}
 write.table(tmp,
@@ -236,21 +251,27 @@ write.table(tmp,
 
 ```{r,eval=FALSE}
 save(tmp,csv, # 同时保存多个对象
-     file = "datasets/tmp1.rdata")
+     file = "datasets/tmp1.rdata") # 保存文件的位置和名字
 ```
 
 保存为`rds`格式：
 
 ```{r,eval=TRUE}
+# rds格式不能同时保存多个对象
 saveRDS(tmp, file = "datasets/tmp.rds")
 ```
 
-以上就是常见的数据读取和写出，最后再说一遍注意点：
+以上就是常见的数据读取和保存，最后再说一遍注意点：
 
 - 输入法需要是英文状态下的标点符号！
 - 文件路径必须写对！
 - 注意不同文件的分隔符！
 - 不同文件使用不同函数读取/写出！不要所有的格式都用一个函数！
-- 如果碰到不知道的格式读取，直接百度！！99.999%能解决你的问题！
+- 如果碰到不知道的格式读取，直接百度！99.999%能解决你的问题！
 
 希望大家以后再也不要碰到数据读取问题！
+
+数据读取之后，下一步就是对数据进行各种各样的操作，这也是R语言中最重要的基础知识。不过在学习数据操作之前，我们先学习一下R语言中的数据类型和数据结构。
+
+
+

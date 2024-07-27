@@ -1,0 +1,310 @@
+---
+title: "基础数据处理"
+format: html
+---
+
+
+类型判断、类型转换
+
+## 类型判断
+
+```{r}
+is.numeric()
+is.character()
+is.double()
+is.integer()
+is.factor()
+is.complex()
+is.logical()
+
+is.data.frame()
+is.array()
+is.matrix()
+is.list()
+```
+
+## 类型转换
+
+
+```{r}
+as.numeric()
+as.character()
+as.double()
+as.integer()
+as.factor()
+as.complex()
+as.logical()
+
+as.data.frame()
+as.array()
+as.matrix()
+as.list()
+```
+
+
+## 数值处理
+
+### 计算函数
+
+```{r}
+x <- c(1,2,3,4,5)
+
+sum(x) # 求和
+mean(x) # 平均数
+median(x)      # 中位数
+sd(x) # 标准差
+var(x) # 方差
+mad(x) # 绝对中位差 median absolute deviation
+quantile(x,probs = c(0.05,0.95)) # 分位数
+range(x) # 范围
+min(x) # 最小值
+max(x) # 最大值
+scale(x) # 中心化，标准化
+```
+
+### 概率函数
+
+- d：密度函数（density）
+- p：分布函数（distribution）
+- q：分位数函数（quantile）
+- r：随机函数（random）
+
+![](figs/PixPin_2024-07-27_10-42-44.png)
+
+
+```{r}
+rnorm(100, mean = 0, sd = 1)
+```
+
+
+设置随机种子数
+
+```{r}
+set.seed(123)
+```
+
+
+
+
+## 字符串处理
+
+
+```{r}
+df <- read.csv("datasets/brca_clin.csv", header = T)
+
+dim(df)
+str(df)
+head(df)
+```
+
+
+计算字符数量
+
+```{r}
+x <- df$barcode[1:3]
+x
+
+nchar(x)
+```
+
+截取字符串、替换字符串
+
+```{r}
+x <- df$barcode[1]
+x
+
+substr(x, start = 1, stop = 15)
+substr(x, start = 1, stop = 3) <- "ggg"
+x
+```
+
+查找字符串
+
+```{r}
+x <- c(df$barcode[1:3], "hahahaha")
+x
+
+grep("TCGA", x)
+
+grepl("TCGA", x)
+```
+
+搜索替换
+
+```{r}
+x <- df$barcode[1:5]
+x
+
+sub("-","_",x)
+gsub("-","_",x)
+```
+
+分割字符串
+
+```{r}
+x <- df$barcode[1]
+x
+
+strsplit(x, split = "-")
+```
+
+连接字符串
+
+```{r}
+x <- c()
+paste("haha",1:3,sep = "")
+paste("haha",1:3,sep = " ")
+paste("haha",1:3,sep = "OOO")
+paste("今天是",date())
+
+paste0("haha",1:3)
+```
+
+大小写转换
+
+```{r}
+x <- c("asdf","asdf","ghb")
+toupper(x)
+
+x <- c("SADFf","FAFFaa")
+tolower(x)
+```
+
+
+## 正则表达式
+
+
+
+```{r}
+ifelse(as.numeric(substr(df$barcode,14,15))<10,"tumor","normal")
+```
+
+
+
+## 行列操作
+
+从TCGA数据库下载的乳腺癌数据，经过整理
+
+```{r}
+library(readxl)
+brca_clin <- read_xlsx("F:/R_books/R_beginners/brca_clin.xlsx", col_names = T)
+
+dim(brca_clin)
+head(brca_clin)
+colnames(brca_clin)
+```
+
+变量名修改
+
+```{r}
+colnames(brca_clin)[c(5,6,7,9)] <- c("weight","stage","days","age")
+colnames(brca_clin)
+```
+
+选择第5~9列：
+
+```{r}
+brca_clin <- brca_clin[,c(5:9)]
+brca_clin
+```
+
+
+按照`age`从小到大排序数据框：
+
+```{r}
+brca_clin[order(brca_clin$age),]
+```
+
+按照从大到小的顺序排列
+
+```{r}
+brca_clin[order(brca_clin$age, decreasing = T),]
+```
+
+变量修改，重编码，转换
+
+查看有几个类别，以及每个类别的数量：
+
+```{r}
+table(brca_clin$stage)
+```
+
+
+```{r}
+brca_clin$stage[brca_clin$stage == "Stage IIB"] <- "Stage_2"
+brca_clin
+```
+
+```{r}
+brca_clin$stage[brca_clin$stage == "Stage IIA"] <- "Stage_2"
+brca_clin$stage[brca_clin$stage == "Stage IA"] <- "Stage_1"
+brca_clin$stage[brca_clin$stage == "Stage I"] <- "Stage_1"
+brca_clin$stage[brca_clin$stage == "Stage IIIA"] <- "Stage_3"
+brca_clin$stage[brca_clin$stage == "Stage IIIC"] <- "Stage_3"
+
+brca_clin
+```
+
+```{r}
+table(brca_clin$stage)
+```
+
+
+
+```{r}
+str(brca_clin)
+is.numeric(brca_clin$age)
+```
+
+
+
+```{r}
+brca_clin$age[brca_clin$age > 60] <- "old"
+brca_clin$age[brca_clin$age <= 60] <- "young"
+brca_clin
+```
+
+```{r}
+brca_clin$days_1 <- ifelse(brca_clin$days == "NA", NA, brca_clin$days)
+brca_clin
+```
+
+
+## 合并行列/数据框
+
+
+
+```{r}
+rm(list = ls())
+library(readxl)
+brca_clin <- read_xlsx("F:/R_books/R_beginners/brca_clin.xlsx", col_names = T)
+
+df1 <- brca_clin[,1:4]
+df2 <- brca_clin[,5:9]
+```
+
+
+```{r}
+cbind(df1, df2)
+```
+
+
+
+merge
+
+
+
+## 长宽转换
+
+
+
+
+
+
+
+
+
+
+
+
+
