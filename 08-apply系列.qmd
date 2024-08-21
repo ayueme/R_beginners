@@ -1,0 +1,144 @@
+---
+title: "apply系列"
+---
+
+`for`循环是一个元素一个元素的操作，R语言是支持向量化操作的，向量化可以简单理解为可以同时对一整行/列进行操作，不用逐元素操作，这样可以大大加快运行速度。
+
+apply函数家族就是这样的一组函数，专门实现向量化操作，可替代for循环。
+
+先举个简单的例子。
+
+```{r}
+a <- c(1,2,3,NA)
+a + 1
+```
+
+
+apply
+
+对数据框按行或者按列进行某个操作
+
+```{r}
+load(file = "datasets/coad_mran_df.rdata")
+
+dim(coad_mrna_df)
+coad_mrna_df[1:4,1:3]
+```
+
+
+```{r}
+coad_mrna_df <- log2(coad_mrna_df + 1)
+```
+
+
+
+```{r}
+tmp <- apply(coad_mrna_df, 1, mean)
+head(tmp)
+```
+
+
+```{r}
+tmp <- vector("numeric", nrow(coad_mrna_df))
+for(i in 1:nrow(coad_mrna_df)){
+  tmp[i] <- mean(as.numeric(coad_mrna_df[i,]))
+}
+head(tmp)
+```
+
+
+...
+
+
+```{r}
+tmp <- apply(coad_mrna_df, 1, mean, na.rm = TRUE)
+head(tmp)
+```
+
+```{r}
+tmp <- apply(coad_mrna_df, 2, mean, na.rm = TRUE)
+head(tmp)
+```
+
+
+
+```{r}
+tmp <- rowMeans(coad_mrna_df)
+head(tmp)
+```
+
+比较运行时间
+
+```{r}
+system.time({
+  tmp <- vector("numeric", nrow(coad_mrna_df))
+  for(i in 1:nrow(coad_mrna_df)){
+    tmp[i] <- mean(as.numeric(coad_mrna_df[i,]))
+    }
+})
+system.time(tmp <- apply(coad_mrna_df, 1, mean))
+system.time(tmp <- rowMeans(coad_mrna_df))
+```
+
+
+```r
+rowMeans()
+rowSums()
+colMeans()
+colSums()
+```
+
+
+```{r}
+tmp <- apply(coad_mrna_df, 1, median)
+```
+
+
+```{r}
+tmp <- apply(coad_mrna_df, 1, function(x){sum(x)>800})
+head(tmp)
+table(tmp)
+```
+
+
+```{r}
+tmp <- rowSums(coad_mrna_df) > 800
+head(tmp)
+table(tmp)
+```
+
+
+选择方差大于1的行（方差小说明这个基因在所有样本中表达量都很接近，这种基因没有意义）
+
+```{r}
+tmp <- coad_mrna_df[apply(coad_mrna_df,1,function(x){var(x)>1}),]
+dim(tmp)
+```
+
+
+
+lapply
+
+对`list`的每一个成分做某项操作，或者对`data.frame`的每一列做某个操作，输出结果是`list`
+
+
+
+
+sapply
+
+`lapply`的简化版本，输出结果不是`list`。如果simplify=FALSE和USE.NAMES=FALSE，那么完全sapply函数就等于lapply函数了。
+
+
+tapply
+
+分组操作
+
+
+vapply
+
+vapply类似于sapply，提供了FUN.VALUE参数，用来控制返回值的行名，这样可以让程序更健壮。
+
+
+
+更复杂的操作建议直接使用`purrr`。
+

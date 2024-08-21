@@ -1,0 +1,31 @@
+# 其他合集 
+
+## 医学统计
+
+- R语言实战医学统计合集：[R语言实战医学统计](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUzOTQzNzU0NA==&action=getalbum&album_id=2231476971388059661&scene=126#wechat_redirect)
+- 在线版电子书：[R语言实战医学统计](https://ayueme.github.io/R_medical_stat/)
+- github地址：[R语言实战医学统计](https://github.com/ayueme/R_medical_stat)
+
+## 临床预测模型
+
+临床预测模型合集：[临床预测模型](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUzOTQzNzU0NA==&action=getalbum&album_id=2393825487539191816&scene=21#wechat_redirect)
+
+## 机器学习
+
+**医学和生信笔记**后台回复**caret**即可获取caret包的合集教程；回复**tidymodels**即可获取tidymodels的合集教程；回复**mlr3**即可获取mlr3合集教程，回复**机器学习**即可获取机器学习推文合集。
+
+R语言机器学习合集：[R语言机器学习](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUzOTQzNzU0NA==&action=getalbum&album_id=2267367379124928515&scene=21#wechat_redirect)
+
+## 生信数据挖掘
+
+生信数据挖掘合集：[生信数据挖掘](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUzOTQzNzU0NA==&action=getalbum&album_id=2255945345983627264&scene=173&from_msgid=2247499322&from_itemidx=1&count=3&nolastread=1#wechat_redirect)
+
+**医学和生信笔记**公众号所有关于**生信数据挖掘**的推文都可以免费下载使用，请看：[“灌水”生信类文章会用到哪些生信下游分析？（附下载地址）](https://mp.weixin.qq.com/s/T3rSmj68Y41w2qIDWRr9Xg)
+
+github地址：[R语言生信数据挖掘](https://github.com/ayueme/R_bioinformatics)
+
+## 扫码关注
+
+欢迎扫码关注：医学和生信笔记
+
+![](figs/46346465dfgdfgd.jpg)

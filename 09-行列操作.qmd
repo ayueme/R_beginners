@@ -1,0 +1,74 @@
+---
+title: "行列操作"
+---
+
+常见的操作在数据结构中已经介绍过了。这一章主要介绍`tidyverse`系列R包了。目前使用R语言进行数据分析是离不开它的，而且确实好用，所以直接给大家介绍。
+
+## tidyverse简介
+
+重点说一下管道
+
+## 整洁数据
+
+什么是整洁数据
+
+每一行是一个观测，每一列是一个变量
+
+rownames_to_column函数介绍
+
+## 行列操作
+
+行列选择等，参考公众号文章dplyr系列
+
+从TCGA数据库下载的乳腺癌数据，经过整理
+
+```{r}
+library(readxl)
+brca_clin <- read_xlsx("F:/R_books/R_beginners/brca_clin.xlsx", col_names = T)
+
+dim(brca_clin)
+head(brca_clin)
+colnames(brca_clin)
+```
+
+
+
+
+## 表格合并
+
+
+
+```{r}
+rm(list = ls())
+library(readxl)
+brca_clin <- read_xlsx("F:/R_books/R_beginners/brca_clin.xlsx", col_names = T)
+
+df1 <- brca_clin[,1:4]
+df2 <- brca_clin[,5:9]
+```
+
+
+```{r}
+cbind(df1, df2)
+```
+
+
+
+merge
+
+
+
+## 长宽转换
+
+
+
+
+
+
+
+
+
+
+
+
+

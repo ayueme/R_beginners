@@ -1,7 +1,84 @@
 project:
-  title: "r-beginners"
+  type: book
+  output-dir: _book
 
 knitr: 
   opts_chunk: 
     collapse: true
+
+book:
+  title: "R语言零基础入门"
+  author: "阿越就是我"
+  date: last-modified
+  date-format: iso
+  
+  page-footer:
+    left: |
+      R语言零基础入门 by 阿越就是我.
+    right: |
+      本书由 <a href="https://quarto.org/">Quarto</a> 强力驱动.
+  #cover-image: cover.png
+  #favicon: cover.png
+  #site-url: https://ayueme.github.io/R_machine_learning/
+  #repo-url: https://github.com/ayueme/R_machine_learning
+  #repo-branch: main
+  #repo-actions: [edit, issue]
+  
+  chapters: 
+    - index.qmd
+    - 01-R和Rstudio.qmd
+    - 02-第一次上手使用.qmd
+    - 03-R包安装.qmd
+    - 04-什么是函数.qmd
+    - 05-导入导出文件.qmd
+    - 06-R中的数据类型.qmd
+    - 0601-数据结构.qmd
+    - 0602-类型判断和转换.qmd
+    - 0603-数值和字符串处理.qmd
+    - 07-控制结构和自编函数.qmd
+
+  appendices: 
+    - 9999-appendix.qmd
+
+format:
+  html:
+    theme: cosmo
+    code-copy: true
+  # pdf:
+  #   documentclass: scrbook
+  #   toc: true
+  #   toc-depth: 2
+  #   toc-title: 目录
+  #   number-sections: true
+  #   number-depth: 3
+  #   linkcolor: highlight
+  #   colorlinks: true
+  #   highlight-style: github
+  #   code-block-bg: light
+  #   code-block-border-left: false
+  #   fontsize: 12pt
+  #   mainfont: "SimSun"
+  #   monofont: "Noto Sans SC"
+  #   sansfont: "Noto Sans SC"
+  #   indent: TRUE
+  #   #设置4个边距
+  #   geometry:
+  #     - top=2.5cm
+  #     - bottom=2.5cm
+  #     - left=2.0cm
+  #     - right=2.0cm
+  #     - heightrounded
+  #     - ignorehead
+  #     - ignorefoot
+  #   include-in-header: preamble.tex
+
+
+
+
+
+
+
+
+
+
 
