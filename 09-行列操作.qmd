@@ -34,40 +34,6 @@ colnames(brca_clin)
 
 
 
-## 表格合并
-
-
-
-```{r}
-rm(list = ls())
-library(readxl)
-brca_clin <- read_xlsx("F:/R_books/R_beginners/brca_clin.xlsx", col_names = T)
-
-df1 <- brca_clin[,1:4]
-df2 <- brca_clin[,5:9]
-```
-
-
-```{r}
-cbind(df1, df2)
-```
-
-
-
-merge
-
-
-
-## 长宽转换
-
-
-
-
-
-
-
-
-
 
 
 

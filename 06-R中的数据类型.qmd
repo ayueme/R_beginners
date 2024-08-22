@@ -92,7 +92,12 @@ TRUE - FALSE
 与：&
 或：|
 非：!
+等于：==
 不等于：!= # 少用
+大于：>
+大于等于：<=
+小于：<
+小于等于：<=
 ```
 
 ```{r}
@@ -107,7 +112,7 @@ is.numeric()   # 是不是数值型
 is.character() # 是不是字符型
 is.double()    # 是不是双精度型
 is.integer()   # 是不是整数型
-is.factor()    # 是不是因子型
+#is.factor()    # 是不是因子型
 is.complex()   # 是不是复数性
 is.logical()   # 是不是逻辑型
 ```

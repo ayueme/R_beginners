@@ -14,7 +14,7 @@ a + 1
 ```
 
 
-apply
+## apply
 
 对数据框按行或者按列进行某个操作
 
@@ -117,24 +117,24 @@ dim(tmp)
 
 
 
-lapply
+## lapply
 
 对`list`的每一个成分做某项操作，或者对`data.frame`的每一列做某个操作，输出结果是`list`
 
 
 
 
-sapply
+## sapply
 
 `lapply`的简化版本，输出结果不是`list`。如果simplify=FALSE和USE.NAMES=FALSE，那么完全sapply函数就等于lapply函数了。
 
 
-tapply
+## tapply
 
 分组操作
 
 
-vapply
+## vapply
 
 vapply类似于sapply，提供了FUN.VALUE参数，用来控制返回值的行名，这样可以让程序更健壮。
 
