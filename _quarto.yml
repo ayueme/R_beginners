@@ -36,6 +36,8 @@ book:
     - 0602-类型判断和转换.qmd
     - 0603-数值和字符串处理.qmd
     - 07-控制结构和自编函数.qmd
+    - 08-apply系列.qmd
+    - 09-实用技巧.qmd
 
   appendices: 
     - 9999-appendix.qmd
@@ -44,33 +46,33 @@ format:
   html:
     theme: cosmo
     code-copy: true
-  # pdf:
-  #   documentclass: scrbook
-  #   toc: true
-  #   toc-depth: 2
-  #   toc-title: 目录
-  #   number-sections: true
-  #   number-depth: 3
-  #   linkcolor: highlight
-  #   colorlinks: true
-  #   highlight-style: github
-  #   code-block-bg: light
-  #   code-block-border-left: false
-  #   fontsize: 12pt
-  #   mainfont: "SimSun"
-  #   monofont: "Noto Sans SC"
-  #   sansfont: "Noto Sans SC"
-  #   indent: TRUE
-  #   #设置4个边距
-  #   geometry:
-  #     - top=2.5cm
-  #     - bottom=2.5cm
-  #     - left=2.0cm
-  #     - right=2.0cm
-  #     - heightrounded
-  #     - ignorehead
-  #     - ignorefoot
-  #   include-in-header: preamble.tex
+  pdf:
+    documentclass: scrbook
+    toc: true
+    toc-depth: 3
+    toc-title: 目录
+    number-sections: true
+    number-depth: 3
+    linkcolor: highlight
+    colorlinks: true
+    highlight-style: github
+    code-block-bg: light
+    code-block-border-left: false
+    fontsize: 12pt
+    mainfont: "SimSun"
+    monofont: "Noto Sans SC"
+    sansfont: "Noto Sans SC"
+    indent: TRUE
+    #设置4个边距
+    geometry:
+      - top=2.5cm
+      - bottom=2.5cm
+      - left=2.0cm
+      - right=2.0cm
+      - heightrounded
+      - ignorehead
+      - ignorefoot
+    include-in-header: preamble.tex
 
 
 

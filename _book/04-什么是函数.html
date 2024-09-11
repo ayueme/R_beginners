@@ -206,6 +206,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">控制结构和自编函数</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-apply系列.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">apply系列</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-实用技巧.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">实用技巧</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
@@ -308,21 +320,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="参数" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="参数"><span class="header-section-number">4.2</span> 参数</h2>
-<p>每个函数都有特定的<strong>参数</strong>（argument），而且这些参数是有要求的，不按照规定写就会报错。</p>
-<p>比如有的参数需要你提供数值型的向量（数据类型会在后面几章介绍）给它，如果你提供的不是数值型向量，那么它就会报错；有的参数不能有<code>NA</code>或者缺失值，如果你提供的数据里有<code>NA</code>或者缺失值，那么它肯定会报错。这个东西是很机械的，不可更改，不按照要求写必然报错！</p>
+<p>每个函数都有特定的<strong>参数</strong>（argument），比如上面的<code>plot(1:10,1:10)</code>，其中的<code>1:10</code>就是<code>plot</code>这个函数的参数，你也可以写成<code>plot(x = 1:10, y = 1:10)</code>：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="04-什么是函数_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>这也是完整的写法，其中的<code>x</code>、<code>y</code>被称为形式参数（简称<strong>形参</strong>），<code>1:10</code>被称为实际参数（简称<strong>实参</strong>）。</p>
+<p>形参是函数的作者规定的，这个名字如果你写了，就要写对，不能乱写，必须按照人家的规定来，实参是需要你自己提供的。</p>
+<p>如果你写了形参的话，可以不用管参数的顺序：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>opar <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 先写x或y都不影响</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">10</span>), <span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">10</span>))</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="04-什么是函数_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(opar)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>形参是可以省略的，但是省略后要按照作者规定的顺序提供实参，不然就会出问题（初学者建议写上形参），比如：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>opar <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 不写形参先后顺序有影响，会默认第一个是x,第二个是y</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">10</span>), <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">10</span>))</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="04-什么是函数_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(opar)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>这些参数是有要求的，不按照规定写就会报错。比如：</p>
+<ul>
+<li>有的参数需要你提供数值型的向量（数据类型会在后面几章介绍）给它，如果你提供的不是数值型向量，那么它就会报错；</li>
+<li>有的参数不能有<code>NA</code>或者缺失值，如果你提供的数据里有<code>NA</code>或者缺失值，那么它肯定会报错。</li>
+</ul>
+<p>这个东西是很机械的，不可更改，函数的作者规定的，不按照要求写必然报错！</p>
+<p>还有一些参数是有默认值的，如果你没有指定，它就会使用默认值。比如：</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>?t.test</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 其中的mu = 0, paired = FALSE, var.equal = FALSE, </span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># conf.level = 0.95 都是默认值</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>如何知道每个参数的具体要求及函数的使用方法呢？我们可以直接查看帮助文档。帮助文档是函数的开发者按照一定的要求写的、能够让使用者快速理解函数用法的文档。</p>
 <p>绝大多数R语言中的函数都可以通过<code>?xxx</code>或者<code>help(xxx)</code>查看函数的帮助文档（自己安装的R包需要先加载），比如：</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 以下两种方法都可以</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>?lines</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 或者</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"lines"</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 以下两种方法都可以</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>?lines</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 或者</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"lines"</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>当你运行上面的代码后，在Rstudio右侧<code>help</code>面板中会出现该函数的帮助文档，如下图所示：</p>
 <p><img src="figs/PixPin_2024-01-23_10-22-45.png" class="img-fluid"></p>
 <p>帮助文档是学习函数用法的最好方法，这也是你以后最常用的学习方法（当然有些帮助文档写的很烂）。</p>
-<p>很多人一看到英文就头大，那么这样的话你可能不适合学R语言，<strong>绝大多数函数的帮助文档和报错信息都是只需要英语4级水平即可理解的</strong>，没有任何难度，只需要你认真去读一读就能得到很多信息！</p>
+<p>很多人一看到英文就头大，那么这样的话你可能不适合学R语言，<strong>绝大多数函数的帮助文档和报错信息都是只需要英语4级水平即可理解的</strong>，没有任何难度，只需要你认真去读一读就能得到很多信息！（只学到这里不往下学的话估计还是看不懂帮助文档的，大概就是单词你都认识，但是不知道什么意思）</p>
 <p>比如，在上面这个帮助文档中：</p>
 <ul>
 <li>在这个帮助文档中，首先是<code>Description</code>，这部分会简要的告诉你这个函数是干啥的，比如这个函数的描述告诉你，这个函数可以使用不同方式给出的坐标，并把点连接成线。</li>
@@ -334,7 +398,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>很多初学者喜欢<strong>直接复制粘贴别人的代码，然后直接把数据换成自己的，绝大多数都会遇到报错</strong>，无法运行。主要原因就是不知道每个函数的具体要求，别人的代码是按照要求写的，自然可以运行，你的东西和别人不一样，不符合函数的要求，必然报错。</p>
 <p>以下是一些常用的帮助函数，你可以自己输入一下试试看，<strong>多敲代码是学习编程的最好方法</strong>：</p>
 <p><img src="figs/PixPin_2024-05-07_18-34-20.png" class="img-fluid"></p>
-<p>自己学习以上代码时记得把函数的名字换成自己想看的，你输入上面的<code>foo</code>必报错！</p>
+<p>自己学习以上代码时记得把对象的名字换成自己想看的，你输入上面的<code>foo</code>必报错！</p>
 <p>关于R包的函数使用时的常见错误：</p>
 <p><img src="figs/PixPin_2024-05-07_18-37-32.png" class="img-fluid"></p>
 

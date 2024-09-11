@@ -172,6 +172,18 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">控制结构和自编函数</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-apply系列.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">apply系列</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-实用技巧.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">实用技巧</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
@@ -229,12 +241,10 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="什么是r语言" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="什么是r语言"><span class="header-section-number">1.1</span> 什么是R语言？</h2>
-<p>R语言是一门编程语言，但是同时一个统计软件。R语言的全称是：The R Project for Statistical Computing</p>
+<p>R语言是一门<strong>编程语言</strong>，但是同时一个<strong>统计软件</strong>。R语言的全称是：The R Project for Statistical Computing</p>
 <p>如果你是一个医学生或者医生，那么你一定用过或听说过SPSS，SPSS是一个统计软件，R语言与之类似，也可以实现各种统计分析，但不同的是，R语言需要自己编写代码，而SPSS只要鼠标点击即可（其实SPSS也可以写代码的）。所以你可以简单理解为<strong>R语言是一个比SPSS更加强大的统计软件</strong>。</p>
 <p>与常见的其他统计分析软件（比如：<code>SPSS</code>、<code>Excel</code>、<code>SAS</code>、<code>Stata</code>、<code>Graphpad Prism</code>）相比，R最主要的优势是免费和功能更加强大。</p>
 <p>R语言的功能非常强大，因为它需要自己编写代码，所以和Python类似，也是一门编程语言，除了统计分析，R语言还非常擅长<strong>数据分析、数据可视化、统计建模</strong>等。</p>
-<p>R语言安装请看视频教程：<a href="https://www.bilibili.com/video/BV1jY411w7zq/">R语言和RStudio安装</a></p>
-<p>R官方网址：https://www.r-project.org/，按照视频教程，选择最新的版本下载安装即可。</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -246,11 +256,17 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>安装路径不能有中文，必须先改成英文；</li>
+<li>安装路径不能有中文，必须先改成英文（也可以安装在D盘，等）；</li>
 <li>安装时建议取消勾选<code>Message Translation</code>，这样报错信息都是英文，方便你搜索解决方法。</li>
 </ol>
 </div>
 </div>
+<p>以下是几个官方网址：</p>
+<ul>
+<li>R官方网址：https://www.r-project.org/</li>
+<li>R官方镜像网址：https://cran.r-project.org/mirrors.html</li>
+</ul>
+<p>根据视频教程操作即可，注意版本选择。</p>
 </section>
 <section id="什么是rstudio" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="什么是rstudio"><span class="header-section-number">1.2</span> 什么是Rstudio？</h2>
@@ -270,22 +286,23 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>安装RStudio之后，界面明显更加好看了，非常的美观，各种按钮、布局等也更加的现代化。</p>
-<p>RStudio官方下载网址：https://posit.co/downloads/</p>
-<p>RStudio安装教程：<a href="https://www.bilibili.com/video/BV1jY411w7zq/">R语言和RStudio安装</a></p>
 <blockquote class="blockquote">
 <p>由于我进行了一些自定义的界面设置，部分细节可能和你的不同。</p>
 </blockquote>
+<p>以下是RStudio官方下载地址：</p>
+<ul>
+<li>RStudio官方下载网址：https://posit.co/download/rstudio-desktop/</li>
+</ul>
+<p><img src="figs/PixPin_2024-08-04_11-58-14.png" class="img-fluid"></p>
 </section>
 <section id="rtools" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="rtools"><span class="header-section-number">1.3</span> Rtools</h2>
 <p>为了保证顺畅的使用，Windows用户还需要安装Rtools，MAC和linux用户不需要安装。</p>
 <p>下载Rtools的官方地址是：https://cran.r-project.org/bin/windows/Rtools/</p>
 <p><img src="figs/PixPin_2024-05-07_15-45-36.png" class="img-fluid"></p>
-<p>打开后需要选择合适的版本，注意不要选错，我选的是Rtools4.3（因为我的R是4.3.x版本，你不要选错），点击后来到一下界面，点击Rtools43 installer即可下载exe安装文件，下载完点击安装即可。</p>
+<p>打开后需要选择合适的版本，注意不要选错，我选的是RTools4.3（因为我的R是4.3.x版本，你不要选错，你的R如果是4.4.x，你就要选择RTools4.4，明白吗？），点击后来到一下界面，点击Rtools43 installer（如果你选的不是RTools4.3，那么数字也会不同，不难理解吧）即可下载exe安装文件，下载完点击安装即可。</p>
 <p><img src="figs/PixPin_2024-05-07_15-44-55.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>视频版安装教程请参考b站：<a href="https://www.bilibili.com/video/BV1jY411w7zq/">适合小白的R语言和R包安装教程</a></p>
-</blockquote>
+<p>视频版教程见B站。</p>
 <p>都安装好之后就可以开始正式的R语言学习之旅了！</p>
 
 

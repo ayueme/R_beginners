@@ -206,6 +206,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">控制结构和自编函数</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-apply系列.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">apply系列</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-实用技巧.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">实用技巧</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
@@ -270,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <blockquote class="blockquote">
-<p>别问我怎么修改R包的默认安装位置，这不是初学者该学的东西，把你的精力用在刀刃上。</p>
+<p>别问我怎么修改R包的默认安装位置，这不是初学者该学的东西，把你的精力用在刀刃上。但是我在合集最后会介绍如何修改。</p>
 </blockquote>
 <p>R语言学到后面其实就是学习各种R包和函数的使用。</p>
 <section id="什么是r包" class="level2" data-number="3.1">
@@ -298,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>R语言是老外发明的东西，我们<strong>要访问老外的东西，由于众所周知的原因，是很困难的</strong>。不只是R，其他的东西比如Python、Linux等，都是这样。</p>
 <p>所以在安装R包时，我们一定要先<strong>修改镜像</strong>（mirror）（或者你可以使用魔法，就像你使用Google play需要魔法一样，如果你在国外的话自然是不需要这一步的）。镜像可以简单理解为中国人为了方便自己下载安装，把国外的东西完整复制了一份放到国内，而且会随着国外的更新而更新。使用镜像的好处的不需要魔法我们也可以流畅快速地下载安装R包。</p>
 <p>一个R包只需要安装一次即可重复使用，R包也可以更新、卸载、重装，这个道理和手机APP简直是一模一样。</p>
-<p>以下是4种R包安装方法的详细介绍，这部分我在哔哩哔哩也有相应的视频介绍，点击即可观看：<a href="https://www.bilibili.com/video/BV11g411o7be/">可能是最好用的R包安装教程</a></p>
+<p>以下是4种R包安装方法的详细介绍，这部分我在哔哩哔哩也有相应的视频介绍，点击即可观看：<a href="https://space.bilibili.com/42460432/channel/collectiondetail?sid=3740949">R语言零基础入门</a></p>
 <section id="从cran安装" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="从cran安装"><span class="header-section-number">3.2.1</span> 从CRAN安装</h3>
 <p><a href="https://cran.r-project.org/">CRAN</a>是最主要的存储R包的仓库，大多数R包都是存储在这里的。</p>
@@ -365,20 +377,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="at">version =</span> <span class="st">"3.18"</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>安装好这个包管理器之后，就可以安装bioconductor的R包了。以后再安装bioconductor的R包时，也不需要再重新安装这个包管理器了。</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-注释
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>R语言每年会进行1次版本大更新，时间大约是每年的4月份，bioconductor每年会进行两次更新，时间大约是每年的4月份和10月份。bioconductor的版本和R的版本是有对应关系的，比如R4.2.x对应的bioconductor版本是3.17，R4.3.x对应的bioconductor版本是3.18，R4.4.x对应的是3.19。对于初学者来说，不建议跨版本使用。</p>
-<p>通常来说R语言不需要频繁的更新，一般不会影响使用，但是如果你一定要更新的话，建议每年的5月份进行更新，刚好是R和bioconductor同时更新的时间，此时的版本刚好匹配，初学者安装R包出错的概率要小一些。</p>
-</div>
-</div>
+<p>:::{.callout-note title = “注意”} R语言每年会进行1次版本大更新，时间大约是每年的4月份，bioconductor每年会进行两次更新，时间大约是每年的4月份和10月份。bioconductor的版本和R的版本是有对应关系的，比如R4.2.x对应的bioconductor版本是3.17，R4.3.x对应的bioconductor版本是3.18，R4.4.x对应的是3.19。对于初学者来说，不建议跨版本使用。</p>
+<p>通常来说R语言不需要频繁的更新，一般不会影响使用，但是如果你一定要更新的话，建议每年的5月份进行更新，刚好是R和bioconductor同时更新的时间，此时的版本刚好匹配，初学者安装R包出错的概率要小一些。 :::</p>
 <p>比如我们要安装一个做差异分析的R包：<code>limma</code>，就可以使用以下代码：</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 每次都要先改镜像</span></span>
@@ -392,19 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="从github安装" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="从github安装"><span class="header-section-number">3.2.3</span> 从github安装</h3>
 <p>有一些R包既不在CRAN，也不在bioconductor，而是在github中。要安装github中的R包，建议借助<code>devtools</code>或者<code>remotes</code>包实现。</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-注释
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>remotes</code>可以认为是<code>devtools</code>的精简版，其实区别不大，所以我个人比较推荐使用<code>devtools</code>。</p>
-</div>
-</div>
+<p>:::{.callout-note title = “注意”} <code>remotes</code>可以认为是<code>devtools</code>的精简版，其实区别不大，所以我个人比较推荐使用<code>devtools</code>。 :::</p>
 <p>首先从CRAN安装<code>devtools</code>包：</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 没改镜像的记得先改镜像</span></span>

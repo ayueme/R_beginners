@@ -206,6 +206,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">控制结构和自编函数</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-apply系列.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">apply系列</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-实用技巧.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">实用技巧</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
@@ -344,7 +356,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>与：<span class="sc">&amp;</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>或：<span class="sc">|</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>非：<span class="sc">!</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>不等于：<span class="sc">!=</span> <span class="co"># 少用</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>等于：<span class="sc">==</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>不等于：<span class="sc">!=</span> <span class="co"># 少用</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>大于：<span class="sc">&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>大于等于：<span class="sc">&lt;=</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>小于：<span class="sc">&lt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>小于等于：<span class="sc">&lt;=</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
@@ -358,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.character</span>() <span class="co"># 是不是字符型</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">is.double</span>()    <span class="co"># 是不是双精度型</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">is.integer</span>()   <span class="co"># 是不是整数型</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">is.factor</span>()    <span class="co"># 是不是因子型</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#is.factor()    # 是不是因子型</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">is.complex</span>()   <span class="co"># 是不是复数性</span></span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">is.logical</span>()   <span class="co"># 是不是逻辑型</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
@@ -369,7 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>不同的行业对于数据集的行和列叫法不同。统计学家称它们为<strong>观测</strong>（observation）和<strong>变量</strong>（variable），数据库分析师则称其为<strong>记录</strong>（record）和<strong>字段</strong>（field），数据挖掘和机器学习的研究者则把它们叫作<strong>示例</strong>（example）和<strong>属性</strong>（attribute）。</p>
 <p>在上表所示的数据集中，<code>PatientID</code>是行标识符（row-identifier）（或者叫“行名”），行名是不能有重复的；<code>AdmDate</code>是日期型变量，<code>Age</code>是连续型变量，<code>Diabetes</code>是名义型变量，<code>Status</code>是有序型变量。</p>
 <p>R中有许多用于存储数据的结构，包括标量、向量、数组、数据框和列表等。上表的结构实际上是R中的数据框（<code>data.frame</code>）。多样化的数据结构赋予了R极其灵活的数据处理能力。</p>
-<p>在上表中，<code>PatientID</code>、<code>AdmDate</code>和<code>Age</code>为数值型（<code>numeric</code>）变量，而<code>Diabetes</code>和<code>Status</code>则为字符型（<code>character</code>）变量。R将实例标识符称为<code>rowmames</code>（行名），将类别型（包括名义型和有序型）变量称为因子（<code>factors</code>）。我们会在下一章中讲解这些内容。</p>
+<p>在上表中，<code>AdmDate</code>和<code>Age</code>为数值型（<code>numeric</code>）变量，而<code>Diabetes</code>和<code>Status</code>则为字符型（<code>character</code>）变量。R将实例标识符称为<code>rowmames</code>（行名），将类别型（包括名义型和有序型）变量称为因子（<code>factors</code>）。我们会在下一章中讲解这些内容。</p>
 
 
 </section>

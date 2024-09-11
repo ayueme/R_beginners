@@ -41,11 +41,15 @@ vignettes/*.pdf
 
 # pkgdown site
 docs/
+_book/
+tcga_brca/
 
 # translation temp files
 po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+*.xlsx
 
 /.quarto/

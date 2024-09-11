@@ -206,6 +206,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">控制结构和自编函数</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-apply系列.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">apply系列</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-实用技巧.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">实用技巧</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
@@ -270,13 +282,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="2.1" class="anchored" data-anchor-id="控制台和脚本窗口"><span class="header-section-number">2.1</span> 控制台和脚本窗口</h2>
 <p>在<code>Console</code>（中文：控制台）窗口中，大于号<code>&gt;</code>的后面，输入<code>1+1</code>，然后按回车键，就会给出计算结果。同理输入其他运算式，按回车键，都会立马得到结果。</p>
 <p><img src="figs/PixPin_2024-04-22_13-33-30.png" class="img-fluid"></p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-note callout-titled" title="注意">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-注释
+注意
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -325,13 +337,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>新建脚本文件后，我们就可以在脚本中写自己的代码了，这里写好的代码可以保存的，方便以后使用。如果你没保存，会有<code>*</code>提示，下面的保存按钮可以保存当前脚本（快捷键“control+s”），保存时可以修改这个脚本的名字：</p>
 <p><img src="figs/PixPin_2024-05-07_16-05-21.png" class="img-fluid"></p>
 <p>在这个脚本文件里可以写任何你想写的代码，比如上面我写了一个名字为<code>fruits</code>的向量，其中包括3个元素：apple、banana、watermelon。</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>R语言中使用<code>&lt;-</code>作为复制符号，而不是<code>=</code>（但是使用<code>=</code>也可以，没有任何问题），以下两种写法都可以：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 两种写法都可以</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">3</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="dv">4</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>a<span class="sc">+</span>b</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="注意">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-注释
+注意
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -342,13 +366,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="figs/PixPin_2024-05-07_16-14-53.png" class="img-fluid"></p>
 <p>点击Run之后，代码运行结果会出现在控制台窗口：</p>
 <p><img src="figs/PixPin_2024-05-07_16-15-45.png" class="img-fluid"></p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled" title="注意">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-提示
+注意
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -368,10 +392,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>当我们执行画图代码后，图形会出现在<strong>Plots</strong>窗口：</p>
 <p><img src="figs/PixPin_2024-05-07_16-39-22.png" class="img-fluid"></p>
 <p>清楚当前环境中的某个对象，可以用：</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(xxx) <span class="co"># xxx是对象名字，rm是remove的缩写</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(xxx) <span class="co"># xxx是对象名字，rm是remove的缩写</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>如果要同时清楚所有对象，可以直接点击Enviroment窗口中的小扫帚图标，也可以直接用：</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="co"># ls()是list的缩写，意思是列出当前所有对象</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="co"># ls()是list的缩写，意思是列出当前所有对象</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="推荐的rstudio设置" class="level2" data-number="2.3">
