@@ -44,7 +44,7 @@
 
 主要内容如下：
 
-![](https://aliyun-bucket0324.oss-cn-shanghai.aliyuncs.com/img/R%E8%AF%AD%E8%A8%80%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8.png)
+![R语言零基础入门](https://aliyun-bucket0324.oss-cn-shanghai.aliyuncs.com/img/R%E8%AF%AD%E8%A8%80%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8.png)
 
 与我的其他合集一样，本合集也会长期保持不定期更新，并且也是**网页版免费看**，PDF版付费获取（暂未整理）。
 
