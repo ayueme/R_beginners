@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.6.15">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R语言零基础入门 - 2&nbsp; R语言初体验</title>
+<title>2&nbsp; R语言初体验 – R语言零基础入门</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-018089954d508eae8a473f0b7f0491f0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-22b4451ef2a64dd3346f18820cc52094.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -112,13 +112,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-第一次上手使用.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R语言初体验</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="搜索" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -167,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-什么是函数.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">什么是函数？</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R包、函数、帮助文档</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,45 +184,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0601-数据结构.html" class="sidebar-item-text sidebar-link">
+  <a href="./07-数据结构.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">数据结构</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0602-类型判断和转换.html" class="sidebar-item-text sidebar-link">
+  <a href="./08-类型判断和转换.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">类型判断和转换</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0603-数值和字符串处理.html" class="sidebar-item-text sidebar-link">
+  <a href="./09-数值和字符串处理.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">数值和字符串处理</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-控制结构和自编函数.html" class="sidebar-item-text sidebar-link">
+  <a href="./10-控制结构和自编函数.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">控制结构和自编函数</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-apply系列.html" class="sidebar-item-text sidebar-link">
+  <a href="./11-apply系列.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">apply系列</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-实用技巧.html" class="sidebar-item-text sidebar-link">
+  <a href="./12-实用技巧.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">实用技巧</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-TCGA_mrna表达矩阵整理.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">TCGA数据下载和整理</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-R绘图入门.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">R绘图入门</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-tidyverse简介.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">tidyverse简介</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">附录</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="切換部分">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="切換部分">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -248,6 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#控制台和脚本窗口" id="toc-控制台和脚本窗口" class="nav-link active" data-scroll-target="#控制台和脚本窗口"><span class="header-section-number">2.1</span> 控制台和脚本窗口</a></li>
   <li><a href="#环境窗口和绘图窗口" id="toc-环境窗口和绘图窗口" class="nav-link" data-scroll-target="#环境窗口和绘图窗口"><span class="header-section-number">2.2</span> 环境窗口和绘图窗口</a></li>
   <li><a href="#推荐的rstudio设置" id="toc-推荐的rstudio设置" class="nav-link" data-scroll-target="#推荐的rstudio设置"><span class="header-section-number">2.3</span> 推荐的RStudio设置</a></li>
+  <li><a href="#rstudio自定义设置" id="toc-rstudio自定义设置" class="nav-link" data-scroll-target="#rstudio自定义设置"><span class="header-section-number">2.4</span> rstudio自定义设置</a></li>
   </ul>
 </nav>
     </div>
@@ -337,18 +356,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>新建脚本文件后，我们就可以在脚本中写自己的代码了，这里写好的代码可以保存的，方便以后使用。如果你没保存，会有<code>*</code>提示，下面的保存按钮可以保存当前脚本（快捷键“control+s”），保存时可以修改这个脚本的名字：</p>
 <p><img src="figs/PixPin_2024-05-07_16-05-21.png" class="img-fluid"></p>
 <p>在这个脚本文件里可以写任何你想写的代码，比如上面我写了一个名字为<code>fruits</code>的向量，其中包括3个元素：apple、banana、watermelon。</p>
-<p>R语言中使用<code>&lt;-</code>作为复制符号，而不是<code>=</code>（但是使用<code>=</code>也可以，没有任何问题），以下两种写法都可以：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 两种写法都可以</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">3</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="dv">4</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>a<span class="sc">+</span>b</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <div class="callout callout-style-default callout-note callout-titled" title="注意">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -361,6 +368,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <p>上图脚本中前两行我写了很多中文，而且在每一行的前面都加了<code>#</code>，<code>#</code>表示这一行不是代码，不需要运行，你可以在<code>#</code>后面写任何你想写的东西，比如一些解释说明的话等。</p>
 </div>
+</div>
+<p>在R语言中，如果需要创建一个名字为<code>a</code>的对象，并且让a等于3，就是通过“赋值”实现的，下面就是示例：通过赋值，让a等于3：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="co"># 让a等于3</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>a <span class="co"># 把a打印在屏幕中，看看是不是3？</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>R语言中使用<code>&lt;-</code>作为赋值符号，而不是<code>=</code>（但是使用<code>=</code>也可以，没有任何问题），以下两种写法都可以：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 通过赋值让a=3，以下两种写法都可以</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">3</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 通过赋值让b=4，以下两种写法都可以</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="dv">4</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看a+b</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>a<span class="sc">+</span>b</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 让dd是一串字符：</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>dd <span class="ot">&lt;-</span> <span class="st">"你好，我是阿越"</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 打印dd</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dd)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "你好，我是阿越"</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>写好代码之后如果你要运行这个代码的话只需要把光标位置放在你要运行的代码的这一行，然后点击<code>Run</code>即可运行这行代码（也可以使用快捷键“control+enter”），代码运行结果会出现在<strong>控制台窗口</strong>：</p>
 <p><img src="figs/PixPin_2024-05-07_16-14-53.png" class="img-fluid"></p>
@@ -379,7 +412,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>光标位置在代码的开头、中间、结尾都没关系，RStudio都能识别出来，你也可以直接使用鼠标全部选中你要运行的代码，再点击Run，也可以达到一样的效果。</p>
 </div>
 </div>
-<p>如果命令提示符（也就是控制台窗口中的<code>&gt;</code>）变成了一个加号（+），这表示我们输入的代码不完整，它正在等你输入完整的代码，这种情况通常是因为我们输入的代码太长了，超过了1行的限制，或者代码中的标点符号（比如：括号，逗号等）不成对。此时按“Esc”即可退回到正常状态下。</p>
+<p>如果命令提示符（也就是控制台窗口中的<code>&gt;</code>）变成了一个加号（<code>+</code>），这表示我们输入的代码不完整，它正在等你输入完整的代码，这种情况通常是因为我们输入的代码太长了，超过了1行的限制，或者代码中的标点符号（比如：括号，逗号等）不成对。此时按“Esc”即可退回到正常状态下。</p>
 <p>RStudio的一大优点就是有代码自动补全和语法高亮功能。</p>
 <p>当你输入代码时，编辑器会提供语法高亮和代码补全提示。你只要输入前3个字母，再按Tab键，即可显示所有可能的函数，按上下方向键可以选择你需要的函数，选好之后按enter键即可选中。鼠标停留在函数名字上即可显示该函数的用法：</p>
 <p><img src="figs/PixPin_2024-05-07_16-08-50.png" class="img-fluid"></p>
@@ -387,22 +420,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="环境窗口和绘图窗口" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="环境窗口和绘图窗口"><span class="header-section-number">2.2</span> 环境窗口和绘图窗口</h2>
-<p>当我们运行代码后，我们建立的对象（比如上面的<code>fruits</code>、<code>x</code>、<code>y</code>）会出现在<strong>Enviroment</strong>窗口中：</p>
+<p>当我们运行代码后，我们建立的对象（比如上面的<code>a</code>、<code>b</code>、<code>dd</code>）会出现在<strong>Enviroment</strong>窗口中：</p>
 <p><img src="figs/PixPin_2024-05-07_16-38-43.png" class="img-fluid"></p>
+<p>初学者可能会经常遇到一个错误：</p>
+<pre><code>错误：找不到对象xxx
+
+Error: object 'ee' not found</code></pre>
+<p>这个时候你就要确认下，你是否已经创建了这个对象，在哪里查看有没有这个对象？在环境面板中查看，环境面板中的东西都叫对象，比如上图中的<code>fruits</code>、<code>x</code>、<code>y</code>就是三个对象。</p>
+<p>比如你现在运行以下代码，就会得到以上报错：</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ee)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>错误<span class="sc">:</span> 找不到对象<span class="st">'ee'</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>就是因为你并没有创建这个对象（环境面板中并没有<code>ee</code>这个对象）！你先创建这个对象就不会报错了：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ee <span class="ot">&lt;-</span> <span class="st">"先定义我，我就不会报错！"</span> <span class="co"># 先定义（或者叫创建）对象</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ee)  <span class="co"># 就不会报错了</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "先定义我，我就不会报错！"</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>清楚当前环境中的某个对象，可以用：</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(xxx) <span class="co"># xxx是对象名字，rm是remove的缩写</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>比如清除<code>dd</code>这个对象，只需要使用：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 运行以下代码，看看环境面板中dd是不是没有了？</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(dd)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>如果要同时清除所有对象，可以直接点击Enviroment窗口中的小扫帚图标，也可以直接用：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="co"># ls()是list的缩写，意思是列出当前所有对象</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>当我们执行画图代码后，图形会出现在<strong>Plots</strong>窗口：</p>
 <p><img src="figs/PixPin_2024-05-07_16-39-22.png" class="img-fluid"></p>
-<p>清楚当前环境中的某个对象，可以用：</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(xxx) <span class="co"># xxx是对象名字，rm是remove的缩写</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>如果要同时清楚所有对象，可以直接点击Enviroment窗口中的小扫帚图标，也可以直接用：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="co"># ls()是list的缩写，意思是列出当前所有对象</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 <section id="推荐的rstudio设置" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="推荐的rstudio设置"><span class="header-section-number">2.3</span> 推荐的RStudio设置</h2>
 <p>点击<code>Tools</code>-<code>Global Options</code>，按照以下图片所示进行设置。</p>
 <p><img src="figs/PixPin_2024-05-08_19-16-43.png" class="img-fluid"></p>
 <p><img src="figs/PixPin_2024-05-08_19-22-03.png" class="img-fluid"></p>
+</section>
+<section id="rstudio自定义设置" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="rstudio自定义设置"><span class="header-section-number">2.4</span> rstudio自定义设置</h2>
+<ul>
+<li>更改代码界面的字体大小：</li>
+</ul>
+<p><img src="figs/PixPin_2024-09-27_13-30-33.png" class="img-fluid"></p>
+<ul>
+<li>更改主题，比如改成黑色背景的，或者更改代码的字体等，可以点击<code>Tools-Global Options</code>来到以下界面进行更改：</li>
+</ul>
+<blockquote class="blockquote">
+<p>注意，由于我自己安装了很多额外的主题和字体，所以我的部分主题和字体你是没有的。</p>
+</blockquote>
+<p><img src="figs/PixPin_2024-09-27_13-32-43.png" class="img-fluid"></p>
+<ul>
+<li>更改脚本窗口、控制台、环境面板等面板的位置和布局：</li>
+</ul>
+<p><img src="figs/PixPin_2024-09-27_13-35-51.png" class="img-fluid"> <img src="figs/PixPin_2024-09-27_13-38-32.png" class="img-fluid"></p>
 
 
 </section>
@@ -443,18 +514,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -486,7 +546,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -521,7 +621,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -797,12 +901,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01-R和Rstudio.html" class="pagination-link  aria-label=" &lt;span="">
+      <a href="./01-R和Rstudio.html" class="pagination-link" aria-label="R/Rstudio/Rtools">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">R/Rstudio/Rtools</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03-R包安装.html" class="pagination-link" aria-label="<span class='chapter-number'>3</span>&nbsp; <span class='chapter-title'>R包介绍和安装</span>">
+      <a href="./03-R包安装.html" class="pagination-link" aria-label="R包介绍和安装">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R包介绍和安装</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

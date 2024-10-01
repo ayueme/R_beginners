@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.6.15">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R语言零基础入门 - 5&nbsp; 导入导出文件</title>
+<title>5&nbsp; 导入导出文件 – R语言零基础入门</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-018089954d508eae8a473f0b7f0491f0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-22b4451ef2a64dd3346f18820cc52094.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -112,13 +112,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-导入导出文件.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">导入导出文件</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="搜索" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -167,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-什么是函数.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">什么是函数？</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R包、函数、帮助文档</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,45 +184,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0601-数据结构.html" class="sidebar-item-text sidebar-link">
+  <a href="./07-数据结构.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">数据结构</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0602-类型判断和转换.html" class="sidebar-item-text sidebar-link">
+  <a href="./08-类型判断和转换.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">类型判断和转换</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0603-数值和字符串处理.html" class="sidebar-item-text sidebar-link">
+  <a href="./09-数值和字符串处理.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">数值和字符串处理</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-控制结构和自编函数.html" class="sidebar-item-text sidebar-link">
+  <a href="./10-控制结构和自编函数.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">控制结构和自编函数</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-apply系列.html" class="sidebar-item-text sidebar-link">
+  <a href="./11-apply系列.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">apply系列</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-实用技巧.html" class="sidebar-item-text sidebar-link">
+  <a href="./12-实用技巧.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">实用技巧</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-TCGA_mrna表达矩阵整理.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">TCGA数据下载和整理</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-R绘图入门.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">R绘图入门</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-tidyverse简介.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">tidyverse简介</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">附录</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="切換部分">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="切換部分">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -290,17 +308,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="工作路径" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="工作路径"><span class="header-section-number">5.1</span> 工作路径</h2>
 <p>首先说下工作路径的问题，当前工作目录（working-directory）是你的R语言读取和保存文件的默认位置。</p>
-<p>这个默认位置是可以更改的，在第2章介绍过：点击<code>Tools</code>-<code>Global Options</code>，按照以下图片所示进行设置，方框里的就是默认工作目录。</p>
+<p>如果你没改过，这个位置有一个默认值，在第2章介绍过：点击<code>Tools</code>-<code>Global Options</code>，按照以下图片所示进行设置，方框里的就是默认工作目录。</p>
 <p><img src="figs/PixPin_2024-05-08_19-16-43.png" class="img-fluid"></p>
 <p>确定好你的R语言的工作目录以及你的文件的存放位置后，才能顺利读取文件，比如你的工作目录在D盘，但是你的文件在E盘，如果读取时没有明确指定文件位置，就会报错。</p>
 <p>打开RStudio后，可以使用<code>getwd()</code>查看当前工作目录：</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "F:/R_books/R_beginners"</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "F:/R_books/r4beginners_base_r"</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>以上结果说明我在：F盘-R_books-R_beginners这个文件夹里。</p>
+<p>以上结果说明我在：F:/R_books/r4beginners_base_r这个文件夹里（和视频中的路径略有不同）。</p>
 <p>也可以查看<code>Console</code>（控制台）的左上角获取当前的工作目录：</p>
-<p><img src="figs/PixPin_2024-05-07_18-13-09.png" class="img-fluid"></p>
+<p><img src="figs/PixPin_2024-10-01_09-04-39.png" class="img-fluid"></p>
 <p>可以使用<code>setwd()</code>重新设置当前工作目录：</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 设置为F盘R_books文件夹</span></span>
@@ -332,20 +350,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] "03-R包安装.qmd"               "04-什么是函数.html"          </span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] "04-什么是函数.qmd"            "04-什么是函数_files"         </span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] "05-导入导出文件.qmd"          "05-导入导出文件.rmarkdown"   </span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [15] "06-R中的数据类型.qmd"         "0601-数据结构.qmd"           </span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] "0602-类型判断和转换.qmd"      "0603-数值和字符串处理.qmd"   </span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [19] "07-控制结构和自编函数.qmd"    "08-apply系列.qmd"            </span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [21] "09-实用技巧.qmd"              "10-TCGA_mrna表达矩阵整理.qmd"</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [23] "9999-appendix.qmd"            "brca_clin.xlsx"              </span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] "brca_filter.R"                "datasets"                    </span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [27] "figs"                         "firsttest.R"                 </span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [29] "index.html"                   "index.qmd"                   </span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [31] "LICENSE"                      "mystats.R"                   </span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [33] "preamble.tex"                 "r-beginners.Rproj"           </span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [35] "README.md"                    "site_libs"                   </span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [37] "tcga_brca"</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 类似的函数还有dir()</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [15] "06-R中的数据类型.qmd"         "07-数据结构.qmd"             </span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] "08-类型判断和转换.qmd"        "09-数值和字符串处理.qmd"     </span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [19] "10-控制结构和自编函数.qmd"    "11-apply系列.qmd"            </span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [21] "12-实用技巧.qmd"              "13-TCGA_mrna表达矩阵整理.qmd"</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [23] "14-R绘图入门.qmd"             "15-tidyverse简介.qmd"        </span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] "16-完结篇.qmd"                "9999-appendix.qmd"           </span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [27] "brca_clin.xlsx"               "brca_filter.R"               </span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [29] "datasets"                     "figs"                        </span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [31] "firsttest.R"                  "index.html"                  </span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [33] "index.qmd"                    "LICENSE"                     </span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [35] "mystats.R"                    "preamble.tex"                </span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [37] "r-beginners.Rproj"            "README.md"                   </span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [39] "site_libs"                    "tcga_meso"</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 类似的函数还有dir()</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>还可以只列出符合要求的文件，比如列出所有以<code>qmd</code>结尾的文件：</p>
 <div class="cell">
@@ -353,11 +372,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] "01-R和Rstudio.qmd"            "02-第一次上手使用.qmd"       </span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [3] "03-R包安装.qmd"               "04-什么是函数.qmd"           </span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  [5] "05-导入导出文件.qmd"          "06-R中的数据类型.qmd"        </span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  [7] "0601-数据结构.qmd"            "0602-类型判断和转换.qmd"     </span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] "0603-数值和字符串处理.qmd"    "07-控制结构和自编函数.qmd"   </span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] "08-apply系列.qmd"             "09-实用技巧.qmd"             </span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] "10-TCGA_mrna表达矩阵整理.qmd" "9999-appendix.qmd"           </span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [15] "index.qmd"</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  [7] "07-数据结构.qmd"              "08-类型判断和转换.qmd"       </span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] "09-数值和字符串处理.qmd"      "10-控制结构和自编函数.qmd"   </span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] "11-apply系列.qmd"             "12-实用技巧.qmd"             </span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] "13-TCGA_mrna表达矩阵整理.qmd" "14-R绘图入门.qmd"            </span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [15] "15-tidyverse简介.qmd"         "16-完结篇.qmd"               </span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] "9999-appendix.qmd"            "index.qmd"</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="读取文件" class="level2" data-number="5.2">
@@ -392,24 +412,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>Error<span class="sc">:</span> <span class="st">`</span><span class="at">path</span><span class="st">`</span> does not exist<span class="sc">:</span> ‘E<span class="sc">:</span><span class="er">/</span>brca_clin.xlsx’</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>这个时候你就要去确认下，你的这个<code>brca_clin.xlsx</code>文件到底在哪里！当你给它正确的路径时，它就不会报错。比如这个示例文件位于<strong>F盘-R_books文件夹-R_beginners文件夹</strong>中，你写对了就能读进来：</p>
+<p>这个时候你就要去确认下，你的这个<code>brca_clin.xlsx</code>文件到底在哪里！当你给它正确的路径时，它就不会报错。比如这个示例文件位于<strong>F:/R_books/r4beginners_base_r</strong>中，你写对了就能读进来：</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 读取</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>brca_clin <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"F:/R_books/R_beginners/brca_clin.xlsx"</span>, <span class="at">col_names =</span> T)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>brca_clin[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>] <span class="co"># 查看第1-5行，第2-5列</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 5 × 4</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="do">##   patient      sample           sample_type         initial_weight</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;chr&gt;        &lt;chr&gt;            &lt;chr&gt;                        &lt;dbl&gt;</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 TCGA-BH-A1FC TCGA-BH-A1FC-11A Solid Tissue Normal            260</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 TCGA-AC-A2FM TCGA-AC-A2FM-11B Solid Tissue Normal            220</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 TCGA-BH-A0DO TCGA-BH-A0DO-11A Solid Tissue Normal            130</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 TCGA-E2-A1BC TCGA-E2-A1BC-11A Solid Tissue Normal            260</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 TCGA-BH-A0BJ TCGA-BH-A0BJ-11A Solid Tissue Normal            200</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>brca_clin <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"F:/R_books/r4beginners_base_r/brca_clin.xlsx"</span>, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">col_names =</span> T)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>brca_clin[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>] <span class="co"># 查看第1-5行，第2-5列</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 5 × 4</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="do">##   patient      sample           sample_type         initial_weight</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;chr&gt;        &lt;chr&gt;            &lt;chr&gt;                        &lt;dbl&gt;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 TCGA-BH-A1FC TCGA-BH-A1FC-11A Solid Tissue Normal            260</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 TCGA-AC-A2FM TCGA-AC-A2FM-11B Solid Tissue Normal            220</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 TCGA-BH-A0DO TCGA-BH-A0DO-11A Solid Tissue Normal            130</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 TCGA-E2-A1BC TCGA-E2-A1BC-11A Solid Tissue Normal            260</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 TCGA-BH-A0BJ TCGA-BH-A0BJ-11A Solid Tissue Normal            200</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>这样我们就成功把文件读取到R里面了，并且这个文件的内容被存储在<code>brca_clin</code>这个对象（object）中，此时你可以在<code>Environment</code>面板中看到<code>brca_clin</code>这个对象。</p>
-<p>上面代码中的<code>F:/R_books/R_beginners/brca_clin.xlsx</code>这种路径写法被称为<strong>绝对路径</strong>，意思是：从最开始的位置一直往下写，除此之外，还有一种写法是<strong>相对路径</strong>，即从相对于当前路径的位置开始写。</p>
-<p>比如，我这段脚本的当前工作路径位于<strong>F盘-R_books文件夹-R_beginners文件夹</strong>中（还记得怎么查看当前工作路径吗？<code>getwd()</code>），和<code>brca_clin.xlsx</code>这个文件同处于一个文件夹中，那么在读取时也可以这么写：</p>
+<p>上面代码中的<code>F:/R_books/r4beginners_base_r/brca_clin.xlsx</code>这种路径写法被称为<strong>绝对路径</strong>，意思是：从最开始的位置一直往下写，除此之外，还有一种写法是<strong>相对路径</strong>，即从相对于当前路径的位置开始写。</p>
+<p>比如，我这段脚本的当前工作路径位于<strong>F盘-R_books文件夹-r4beginners_base_r文件夹</strong>中（还记得怎么查看当前工作路径吗？<code>getwd()</code>），和<code>brca_clin.xlsx</code>这个文件同处于一个文件夹中，那么在读取时也可以这么写：</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 因为在同一路径下，所以可以直接写名字</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>brca_clin <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"brca_clin.xlsx"</span>, <span class="at">col_names =</span> T)</span>
@@ -418,7 +439,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>brca_clin <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"./brca_clin.xlsx"</span>, <span class="at">col_names =</span> T)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>其中的<code>./</code>表示当前工作路径，可以省略不写。</p>
-<p>如果一个名字是<code>brca_expr.xlsx</code>的文件位于<strong>F盘-R_books文件夹-R_beginners文件夹-datasets文件夹</strong>中，也就是说<code>datasets</code>这个文件夹是<strong>和当前工作路径同一级</strong>的，但是我们要读取的文件在<code>datasets</code>文件夹中，那么在读取时就可以这么写：</p>
+<p>如果一个名字是<code>brca_expr.xlsx</code>的文件位于<strong>F盘-R_books文件夹-r4beginners_base_r文件夹-datasets文件夹</strong>中，也就是说<code>datasets</code>这个文件夹是<strong>和当前工作路径同一级</strong>的，但是我们要读取的文件在<code>datasets</code>文件夹中，那么在读取时就可以这么写：</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 加了一个datasets/</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>brca_expr <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"datasets/brca_expr.xlsx"</span>, <span class="at">col_names =</span> T)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1004,18 +1025,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1047,7 +1057,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1082,7 +1132,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1358,12 +1412,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04-什么是函数.html" class="pagination-link  aria-label=" &lt;span="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">什么是函数？</span></span>
+      <a href="./04-什么是函数.html" class="pagination-link" aria-label="R包、函数、帮助文档">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R包、函数、帮助文档</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06-R中的数据类型.html" class="pagination-link" aria-label="<span class='chapter-number'>6</span>&nbsp; <span class='chapter-title'>数据类型</span>">
+      <a href="./06-R中的数据类型.html" class="pagination-link" aria-label="数据类型">
         <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">数据类型</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
