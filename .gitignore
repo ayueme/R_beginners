@@ -40,8 +40,6 @@ vignettes/*.pdf
 .Renviron
 
 # pkgdown site
-docs/
-_book/
 tcga_brca/
 
 # translation temp files
