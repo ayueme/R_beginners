@@ -368,13 +368,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(a) <span class="co"># 查看类型</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "numeric"</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个名字是b的向量</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个名字是b的向量，字符型一定要加引号！</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"one"</span>, <span class="st">"two"</span>, <span class="st">"three"</span>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个名字是d的向量，不用c是为了避免和函数 c() 混淆</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>这里，<code>a</code>是数值型向量，<code>b</code>是字符型向量，而<code>d</code>是逻辑型向量。向量中的值被称为<strong>元素</strong>（element），比如向量<code>a</code>的第一个元素是<code>1</code>，向量<code>b</code>的第一个元素是<code>"one"</code>。</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+注释
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>在给对象命名时要注意不要和一些函数或者表示特定意义的字符用相同的名字，比如<code>c/T/F/TRUE/FALSE</code>等等，并且最好不要使用<code>-</code>，因为<code>-</code>在R语言中表示减号，容易引起报错，更推荐大家使用<code>_</code>。</p>
+<p>除此之外还有一个初学者经常会遇到的报错是：<code>Error: unexpected xxx</code>（中文报错：错误：意外的xxx），多数情况下是由于标点符号导致的，比如：标点符号不是英文状态下的、没有配对，或者名字拼错、大小写拼错等原因，需认真仔细检查自己的代码。</p>
+</div>
+</div>
 <p>注意，单个向量中的数据有相同的类型或模式（数值型、字符型或逻辑型）。同一向量中无法混杂不同类型的数据。比如：</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 会都变成字符型</span></span>
@@ -534,7 +548,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="7.1.5" class="anchored" data-anchor-id="根据名字选择向量元素"><span class="header-section-number">7.1.5</span> 根据名字选择向量元素</h3>
 <p>还可以对向量中的每一个元素取一个名字，比如：</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个命名向量</span></span>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个命名向量，别用-，更推荐用_</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>named_a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">age =</span> <span class="dv">18</span>, <span class="at">bmi =</span> <span class="dv">22</span>, <span class="at">weight =</span> <span class="dv">65</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>named_a</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="do">##    age    bmi weight </span></span>
