@@ -1,10 +1,10 @@
 # 前言
 
->该配套文档已经进行了5次更新（最近一次是20241117），主要是把初学者常犯的错误指出来，帮助大家减少报错，报错内容主要来自b站、小红书、粉丝qq群，感谢大家；除此之外增加R/rtools/rstudio的版本注意问题。
+>该配套文档已经进行了6次更新（最近一次是20250510），主要是把初学者常犯的错误指出来，帮助大家减少报错，报错内容主要来自b站、小红书、粉丝qq群，感谢大家；除此之外增加R/rtools/rstudio的版本注意问题。
 
 - 本合集的Github项目地址：[R_beginners](https://github.com/ayueme/R_beginners)
-- 本合集的在线观看地址：[R语言零基础入门](https://ayueme.github.io/R_beginners/)
-- 本合集的配套视频地址：[R语言零基础入门](https://space.bilibili.com/42460432/channel/collectiondetail?sid=3740949)
+- 本合集的配套文档观看地址：[R语言零基础入门](https://ayueme.github.io/R_beginners/)
+- 本合集的配套视频观看地址：[R语言零基础入门](https://space.bilibili.com/42460432/lists/3740949?type=season)
 
 ## R语言在医学中的应用
 

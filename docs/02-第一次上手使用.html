@@ -369,7 +369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>上图脚本中前两行我写了很多中文，而且在每一行的前面都加了<code>#</code>，<code>#</code>表示这一行不是代码，不需要运行，你可以在<code>#</code>后面写任何你想写的东西，比如一些解释说明的话等。</p>
 </div>
 </div>
-<p>在R语言中，如果需要创建一个名字为<code>a</code>的对象，并且让a等于3，就是通过“赋值”实现的，下面就是示例：通过赋值，让a等于3：</p>
+<p>在R语言中，如果需要创建一个名字为<code>a</code>的对象（或者叫变量），并且让a等于3，就是通过“赋值”实现的，下面就是示例：通过赋值，让a等于3：</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="co"># 让a等于3</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>a <span class="co"># 把a打印在屏幕中，看看是不是3？</span></span>
@@ -394,6 +394,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 打印dd</span></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dd)</span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "你好，我是阿越"</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="注意">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+注意
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>在R语言中，变量的名字有一些规则和惯例需要遵循，以确保代码的可读性和准确性。以下是常见的变量命名注意事项：</p>
+<ul>
+<li>合法字符：变量名只能包含字母（a-z,A-Z）、数字（0-9）以及点（.）和下划线（_）。变量名不能以数字开头。</li>
+<li>区分大小写：R语言区分大小写，这意味着<code>myVar</code>和<code>myvar</code>会被视为两个不同的变量。</li>
+<li>避免使用关键字：不要使用R中的保留字或关键字作为变量名，如<code>if</code>,<code>else</code>,<code>function</code>,<code>c</code>,<code>TRUE</code>,<code>FALSE</code>等，以免造成混淆和错误。</li>
+</ul>
+</div>
 </div>
 <p>写好代码之后如果你要运行这个代码的话只需要把光标位置放在你要运行的代码的这一行，然后点击<code>Run</code>即可运行这行代码（也可以使用快捷键“control+enter”），代码运行结果会出现在<strong>控制台窗口</strong>：</p>
 <p><img src="figs/PixPin_2024-05-07_16-14-53.png" class="img-fluid"></p>
@@ -438,7 +456,7 @@ Error: object 'ee' not found</code></pre>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "先定义我，我就不会报错！"</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>清除当前环境中的某个对象，可以用：</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(xxx) <span class="co"># xxx是对象名字，rm是remove的缩写</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(xxx) <span class="co"># xxx是对象名字，`rm`是`remove`的缩写</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>比如清除<code>dd</code>这个对象，只需要使用：</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 运行以下代码，看看环境面板中dd是不是没有了？</span></span>

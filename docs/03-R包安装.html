@@ -300,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <blockquote class="blockquote">
-<p>别问我怎么修改R包的默认安装位置，这不是初学者该学的东西，把你的精力用在刀刃上。但是我在合集最后会介绍如何修改。</p>
+<p>别问我怎么修改R包的默认安装位置，这不是初学者该学的东西，把你的精力用在刀刃上，我会在实用技巧章节中介绍如何修改。</p>
 </blockquote>
 <p>R语言学到后面其实就是学习各种R包和函数的使用。</p>
 <section id="什么是r包" class="level2" data-number="3.1">
@@ -334,7 +334,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://cran.r-project.org/">CRAN</a>是最主要的存储R包的仓库，大多数R包都是存储在这里的。</p>
 <p>要从CRAN安装，我们首先要修改镜像（如果你人在国外是不需要这一步的）。这个过程在安装好Rstudio之后非常简单，依次点击：<code>Tools</code>-<code>Global Options</code>：</p>
 <p><img src="figs/PixPin_2024-02-22_13-36-23.png" class="img-fluid"></p>
-<p>然后按照下图所示依次点击，在列出的镜像中<strong>任选一个中国的镜像</strong>即可（比如我选择了上海交通大学的镜像，理论上改好镜像之后下载会飞快并且不会出现下载不完全的情况，如果发生了，可以换镜像试试），选好之后点击<code>OK</code>即可。这样就修改好镜像了，下面就可以畅快的安装R包了。这种修改镜像只需要1次修改即可，以后从CRAN安装R包都会默认使用你选择的这个镜像，不用每次都改。</p>
+<p>然后按照下图所示依次点击，在列出的镜像中<strong>任选一个中国的镜像</strong>即可（比如我选择了上海交通大学的镜像，理论上改好镜像之后下载会飞快，并且不会出现下载不完全的情况，<strong>如果发生了，可以换镜像试试</strong>），选好之后点击<code>OK</code>即可。</p>
+<p>这样就修改好镜像了，下面就可以畅快的安装R包了。这种修改镜像只需要1次修改即可，以后从CRAN安装R包都会默认使用你选择的这个镜像，不用每次都改。</p>
 <p><img src="figs/PixPin_2024-02-22_13-38-48.png" class="img-fluid"></p>
 <p>比如我们现在想要安装<code>ggplot2</code>这个R包，使用以下代码即可：</p>
 <div class="cell">
@@ -360,8 +361,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>医学生/医生学习R语言有相当一部分人是想做<strong>生信分析</strong>的，绝大多数做生信分析的R包都不在CRAN中，而是存储在<a href="https://bioconductor.org/">bioconductor</a>中，这个网站是专门存储生物信息学分析所用R包的。</p>
 <p><img src="figs/PixPin_2024-02-22_13-50-27.png" class="img-fluid"></p>
 <p>这个仓库也是老外建立维护的，所以要安装这里的R包，自然也是先要更改镜像的。</p>
-<p>从bioconductor的<a href="https://bioconductor.org/about/mirrors/">官方镜像列表</a>中可知，目前中国镜像有以下4个，分别是<strong>清华大学的镜像、南京大学的镜像、中国科学技术大学的镜像、西湖大学的镜像</strong>，如下所示：</p>
-<p><img src="figs/PixPin_2024-02-22_13-53-57.png" class="img-fluid"></p>
+<p>从bioconductor的<a href="https://bioconductor.org/about/mirrors/">官方镜像列表</a>中可知，目前中国镜像有以下5个，分别是<strong>清华大学的镜像、南京大学的镜像、中国科学技术大学的镜像、西湖大学的镜像、浙江大学的镜像</strong>，如下所示：</p>
+<p><img src="figs/bioconductor镜像列表.png" class="img-fluid"></p>
 <p><strong>每次</strong>在安装bioconductor的R包之前，都要先运行以下代码更换镜像，<strong>任选一个运行</strong>即可，目前我<strong>推荐你使用西湖大学的镜像</strong>，原因请看<a href="https://mp.weixin.qq.com/s/qIuZ0D_CtDf9iv-ndnuV4g">bioconductor有新的镜像选择啦</a>：</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用清华大学的镜像</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">BioC_mirror=</span><span class="st">"https://mirrors.tuna.tsinghua.edu.cn/bioconductor"</span>)</span>
@@ -388,7 +389,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>运行完以上代码更改好镜像之后，我们还需要<strong>先安装一个bioconductor的R包管理器</strong>，才能安装bioconductor中的R包，使用以下代码安装bioconductor的R包管理器，也就是<code>BiocManager</code>包。</p>
-<p>由于bioconductor更新频繁，所以版本号会经常变，大家一定要亲自打开官方网站查看当前版本，使用官方网址给出的代码！不要单纯的复制粘贴！</p>
+<p>由于bioconductor更新频繁，所以<strong>版本号会经常变，大家一定要亲自打开官方网站</strong>查看当前版本，使用官方网址给出的代码！不要单纯的复制粘贴！</p>
 <p>官方网址：<a href="https://bioconductor.org/install/">安装bioconductor的官方网址</a></p>
 <p><img src="figs/PixPin_2024-11-17_10-01-18.png" class="img-fluid"></p>
 <div class="cell">
@@ -396,7 +397,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 注意不要搞错版本，否则小白搞不定！！</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"BiocManager"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"BiocManager"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="at">version =</span> <span class="st">"3.18"</span>) <span class="co"># 这个版本会变化的，根据官网来！！</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="at">version =</span> <span class="st">"3.21"</span>) <span class="co"># 这个版本会变化的，根据官网来！！</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>安装好这个包管理器之后，就可以安装bioconductor的R包了。以后再安装bioconductor的R包时，也不需要再重新安装这个包管理器了。</p>
 <div class="callout callout-style-default callout-note callout-titled" title="注意">
@@ -545,7 +546,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fl">2.</span> 不存在叫‘latticeExtra’这个名字的程辑包</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>首先看看自己的拼写错了吗？标点符号有错误吗？没问题就安装这个<span class="st">`</span><span class="at">latticeExtra</span><span class="st">`</span>包即可</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>首先看看自己的拼写错了吗？大小写错了吗？标点符号有错误吗？没问题就安装这个<span class="st">`</span><span class="at">latticeExtra</span><span class="st">`</span>包即可</span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fl">3.</span> 程序包安装入‘C<span class="sc">:</span><span class="er">/</span>Users<span class="sc">/</span>xxx<span class="sc">/</span>AppData<span class="sc">/</span>Local<span class="sc">/</span>R<span class="sc">/</span>win<span class="sc">-</span>library<span class="sc">/</span><span class="fl">4.2</span>’(因为‘lib’没有被指定)</span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span> package ‘limma’ is not available <span class="cf">for</span> this version of R</span>
@@ -555,11 +556,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="fl">4.</span> 安装程序包‘mapproj’时退出狀態的值不是0</span>
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>大概率依赖包没装好。</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>依赖包没装好，仔细检查软件给出的红色信息！</span>
 <span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="fl">5.</span> <span class="fu">library</span>(lsmeans) Error<span class="sc">:</span> 找不到‘lsmeans’所需要的程辑包‘emmeans’</span>
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>缺什么就安装什么。找不到<span class="st">`</span><span class="at">emmeans</span><span class="st">`</span>就安装<span class="st">`</span><span class="at">emmeans</span><span class="st">`</span>。</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>缺什么就安装什么。缺<span class="st">`</span><span class="at">emmeans</span><span class="st">`</span>就安装<span class="st">`</span><span class="at">emmeans</span><span class="st">`</span>。</span>
 <span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="fl">6.</span> 用devtools从github安装包，无论是直接安装还是本地安装，都报timeout错误</span>
 <span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a></span>

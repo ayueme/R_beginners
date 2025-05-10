@@ -295,8 +295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>前面5章内容其实难度不大，及时对于没有任何计算机基础的医学生/医生来说，认真阅读后也能理解其内容，但是从这一章开始，就开始进入比较抽象的内容了。</p>
-<p>由于下一章要介绍的内容太过于抽象，对于初学者可能难度较大，所以我今天先介绍一点稍微简单一点的内容作为过渡。</p>
-<p>今天介绍的这部分内容是R语言基础中的基础，不过非常简单，也很好理解。</p>
+<p>由于下一章要介绍的内容太过于抽象，对于初学者可能难度较大，所以这一章先介绍一点稍微简单一点的内容作为过渡。这一章介绍的内容是R语言基础中的基础，不过非常简单，也很好理解。</p>
 <p>医学统计学中会把数据分为<strong>计量资料、计数资料、等级资料</strong>等不同的类型，R语言中也有类似的分类。</p>
 <p>R中的数据类型主要有以下几类：</p>
 <ul>
@@ -349,7 +348,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看类型</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(my_string)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "character"</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "character"</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 即使把数字引起来，这个数字也会变成字符型！</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>nu <span class="ot">&lt;-</span> <span class="st">"123"</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>nu</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "123"</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="逻辑型" class="level2" data-number="6.4">
@@ -388,6 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="类型判断" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="类型判断"><span class="header-section-number">6.5</span> 类型判断</h2>
+<p>如何判断变量是不是某一种类型？</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.numeric</span>()   <span class="co"># 是不是数值型</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.character</span>() <span class="co"># 是不是字符型</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">is.double</span>()    <span class="co"># 是不是双精度型</span></span>

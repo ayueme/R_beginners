@@ -331,7 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>今天给大家介绍R语言中的数据结构，数据结构就是存储数据的形式。数据结构的概念非常重要，也是必须要理解的内容。</p>
-<p>今天的内容可以说是R语言入门中最重要的基础知识了，但同时对于没有任何计算机基础的人来说，也是超级抽象，因为这部分内容和我们医学生日常接触的内容没有任何关系，从这一章开始，也是正式进入了R语言的核心内容。</p>
+<p>今天的内容可以说是<strong>R语言入门中最重要的基础知识</strong>了，但同时对于没有任何计算机基础的人来说，也是<strong>超级抽象</strong>，因为这部分内容和我们医学生日常接触的内容没有任何关系，从这一章开始，也是正式进入了R语言的核心内容。</p>
 <p>如果觉得这部分内容太过抽象，难以理解，也不用担心，因为这部分内容虽然复杂，但主要是概念性的内容，有很多东西不用急于理解，只要记住即可。</p>
 <p>学习编程就是要多敲代码，大家跟着多敲一敲，自然就记住且理解了。</p>
 <p>我们常说的<strong>数据操作其实就是对各种数据结构进行操作</strong>，你在平常碰到的绝大多数数据清理/整理等问题，说白了就是对数据框、向量、列表等各种结构进行处理，所以这部分内容非常重要。</p>
@@ -1384,7 +1384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="do">##   Type2         0        1    0</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>医学生应该都能看懂这个结果什么意思吧？</p>
-<p>在每个变量名前都键入一次<code>patientdata$</code>的写法是不符合编程思想的，是很繁琐的，所以给大家介绍一个<code>with()</code>函数，在<code>with()</code>函数内部，你可以不用写数据集的名字：</p>
+<p>在每个变量名前都键入一次<code>patientdata$</code>的写法是不符合编程思想的，是很繁琐的，所以给大家介绍一个<code>with()</code>函数，在<code>with()</code>函数内部，你可以不用写那么多次数据集的名字：</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(patientdata,</span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">table</span>(diabetes, status)</span>
@@ -1848,11 +1848,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="列表" class="level2" data-number="7.6">
 <h2 data-number="7.6" class="anchored" data-anchor-id="列表"><span class="header-section-number">7.6</span> 列表</h2>
-<p>列表，list，是除了数据框之外第二重要的数据结构，甚至可以说是最重要的数据结构，但同时也是最复杂的一种结构。</p>
+<p>列表，<code>list</code>，是除了数据框之外第二重要的数据结构，甚至可以说是最重要的数据结构，但同时也是最复杂的一种结构。</p>
 <p>列表是一个大型的存储结构，里面啥都能放。比如，可以包含不同类型的数据，也可以包含其他数据结构，如向量、矩阵或数据框等，列表中也可以包含列表。</p>
 <section id="创建列表" class="level3" data-number="7.6.1">
 <h3 data-number="7.6.1" class="anchored" data-anchor-id="创建列表"><span class="header-section-number">7.6.1</span> 创建列表</h3>
-<p>可以使用函数list()创建列表，使用语法为：</p>
+<p>可以使用函数<code>list()</code>创建列表，使用语法为：</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>mylist <span class="ot">&lt;-</span> <span class="fu">list</span>(object1, object2, ...)</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
