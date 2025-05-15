@@ -350,10 +350,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>随机正态分布：</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1]  1.81835201  0.59476848  0.47606983  0.74488055  0.78350206  0.09559145</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [7]  0.97790510  0.31037163  0.85399949 -1.17965617  0.67017657  0.37674631</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [13]  0.60552127  0.13587702  0.94603265  0.86884790  1.49633420 -0.06507552</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [19] -1.11557097 -0.37033130</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] -0.02027057  1.56041938 -0.46651681 -0.10787528  0.14175910  0.74868227</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [7]  0.74921490  0.13538147 -0.26322995 -0.05257977 -0.77389060  0.44162866</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] -0.22172129 -0.88186195 -0.35806580  1.71153107  0.80397581 -0.43135736</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [19] -1.39573947  0.63939258</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>密度正态分布：</p>
 <div class="cell">
@@ -363,9 +363,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>随机均匀分布：</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">20</span>, <span class="at">min =</span> <span class="dv">10</span>, <span class="at">max =</span> <span class="dv">80</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 23.70136 18.09533 22.33314 41.91993 43.96150 17.45314 33.53049 40.12813</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] 75.50190 68.81950 18.21246 55.79246 77.81459 41.10217 35.37126 65.96234</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] 39.76038 15.05377 14.63721 27.52079</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 28.46182 64.61357 27.32393 47.52201 41.29678 61.18506 50.57267 34.46394</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] 46.95164 56.53622 10.17328 12.30362 72.96443 53.71526 41.47820 36.98493</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] 37.74878 43.46432 49.77287 61.49833</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>随机过程无法复现，但是可以通过设置随机种子数复现（所以计算机里面的随机是伪随机）：</p>
 <div class="cell">
@@ -495,7 +495,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"haha"</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="at">sep =</span> <span class="st">"OOO"</span>)</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "hahaOOO1" "hahaOOO2" "hahaOOO3"</span></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"今天是"</span>,<span class="fu">date</span>())</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "今天是 Sat May 10 12:20:28 2025"</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "今天是 Thu May 15 12:52:20 2025"</span></span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"haha"</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "haha1" "haha2" "haha3"</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
