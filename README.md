@@ -1,6 +1,6 @@
 # 前言
 
->该配套文档已经进行了6次更新（最近一次是20250510），主要是把初学者常犯的错误指出来，帮助大家减少报错，报错内容主要来自b站、小红书、粉丝qq群，感谢大家；除此之外增加R/rtools/rstudio的版本注意问题。
+>该配套文档已经进行了7次更新（最近一次是20250820），主要是把初学者常犯的错误指出来，帮助大家减少报错，报错内容主要来自b站、小红书、粉丝qq群，感谢大家；除此之外增加R/rtools/rstudio的版本注意问题。
 
 - 本合集的Github项目地址：[R_beginners](https://github.com/ayueme/R_beginners)
 - 本合集的配套文档观看地址：[R语言零基础入门](https://ayueme.github.io/R_beginners/)
@@ -44,10 +44,10 @@
 
 ![](https://aliyun-bucket0324.oss-cn-shanghai.aliyuncs.com/img/3510323.png)
 
-与我的其他合集一样，本合集也会长期保持不定期更新，并且也是**网页版免费看**，PDF版付费获取（暂未整理）。
+与我的其他合集一样，本合集也会长期保持不定期更新，并且也是**网页版免费看**，PDF版付费获取（附赠Word版）。
 
 - 免费文档观看网址：[R语言零基础入门](https://ayueme.github.io/R_beginners/)
-- PDF版获取链接：暂未整理
+- PDF版获取链接：公主号：[R语言零基础入门PDF版](https://mp.weixin.qq.com/s/Hpur6gVN1-LDQqL6PtGYsw)；或者在[阿越就是我]的B站小店购买。
 
 所有内容都已在我的个人公众号（医学和生信笔记）发布，收录在[R语言入门合集](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUzOTQzNzU0NA==&action=getalbum&album_id=3635563493526208514&scene=173&subscene=&sessionid=undefined&enterid=0&from_msgid=2247503407&from_itemidx=1&count=3&nolastread=1#wechat_redirect)中，包括数据获取方式，想要白嫖的可在历史推文中查看对应的文章（有些数据会在公众号文章的评论区放出获取方式）。
 
@@ -80,7 +80,7 @@
 - 预测模型和机器学习：
   - 《应用预测建模》（caret说明书，适合医学生入门预测模型）
   - 《R语言整洁建模》（《tidy modeling with R》中文版，本人翻译，已上市）
-  - 《R语言机器学习-基于mlr3》（中文版翻译中，未上市）
+  - 《Applied Machine Learning Using mlr3 in R》（中文版《使用mlr3应用机器学习》也是由我翻译，2025下半年上市）
   - 《精通机器学习-基于R》（进一步了解caret及其他机器学习R包）
 
 ## 作者介绍
